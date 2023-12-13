@@ -16,6 +16,7 @@ body div#background {
   width: 100vw;
   position: absolute;
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 }
 html div#root,
