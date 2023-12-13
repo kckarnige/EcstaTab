@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "Ecsta",
+    "short_name": "Ecsta",
+    "version": "0.0.1",
+  
+    "description": "A very simple new tab application meant to stay out of your way while still being a pleasant distraction for those who need something to look at while they think.",
+
+    "icons": {
+    },
+    
+    "browser_specific_settings": {
+        "gecko": {
+          "id": "Ecsta@kckarnige.github.io"
+        }
+    },
+
+    "chrome_settings_overrides": {
+        "homepage": "index.html"
+    },
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    }
+}
+  
