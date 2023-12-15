@@ -1,6 +1,9 @@
 window.onload = () => {
-    document.getElementById("setKeyBox").value =
-        localStorage.getItem("unsplashApiKey");
+    if (localStorage.getItem("unsplashApiKey")) {
+        document.getElementById("setKeyBox").value = localStorage.getItem("unsplashApiKey");
+    } else {
+        document.getElementById("cornerButton").classList.add("hide");
+    }
 };
 document.body.addEventListener("keydown", (e) => {
     if (e.code === "Enter") {
@@ -10,6 +13,7 @@ document.body.addEventListener("keydown", (e) => {
                 document.getElementById("setKeyBox").value
             );
             alert(`Successfully set!`);
+            document.getElementById("cornerButton").classList.remove("hide");
         } else {
             alert(`Must be a 43 character Unsplash access key.`);
         }
