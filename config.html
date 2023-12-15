@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="res/css/style.css" />
     <style>
         div#background {
             background-image: url("https://kckarnige.is-a.dev/res/Untitled-1.png");
@@ -18,19 +18,16 @@
     <div id="background"></div>
     <div id="root">
         <a id="cornerButton" class="home" href="index.html">Back</a>
-        <div id="setKeyContainer">
-            <div id="setKeyInfo">
-                <h1>Instructions</h1>
-                <p>1. Go to <a href="https://unsplash.com/developers">Unsplash.com/developer</a> and create an application.</p>
-                <p>1b. You might need to create an account.</p>
-                <p>2. Agree to the legal stuff (might wanna read it, just in case).</p>
-                <p>3. Name it whatever you want, same with the description.</p>
-                <p>4. Scroll down and copy the access key.</p>
-                <p>5. Paste it in the box on this page and hit enter.</p>
+        <div id="setContainer">
+            <div id="setInfo">
+                <h1>Change Query</h1>
+                <p>Sets the query used to grab the background.</p>
+                <input id="setQueryBox" maxlength="43" placeholder="Set Query" />
             </div>
-            <input id="setKeyBox" maxlength="43" placeholder="Access Key" />
+            <button id="resetQuery">Reset</button>
+            <button id="saveSettings">Save</button>
         </div>
     </div>
-    <script src="setKey.js"></script>
+    <script src="res/js/config.js"></script>
   </body>
 </html>

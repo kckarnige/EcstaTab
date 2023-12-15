@@ -8,10 +8,14 @@ var currentDate = new Date().toISOString().split("T")[0];
 if (UNSPLASH_API_KEY) {
   //Background code
   function set(fetched) {
-    localStorage.setItem("fetchedBgImg", fetched + "");
-    document.getElementById("background").style.backgroundImage = `url(${fetched})`;
+    localStorage.setItem("fetchedBgImg", fetched.urls.small + "");
+    document.getElementById("background").style.backgroundImage = `url(${fetched.urls.small})`;
+    localStorage.setItem("unsplashApiCreditName", fetched.user.name + "");
+    document.getElementById("imgCreator").innerText = ("Image by " + fetched.user.name + " via Unsplash");
+    localStorage.setItem("unsplashApiCreditLink", fetched.user.links.html + "");
+    document.getElementById("imgCreator").setAttribute("href", fetched.user.links.html);
     console.log("Using fetched image");
-    console.log(fetched);
+    console.log(fetched.urls.small);
     console.log(getLastFetch);
     console.log(getLastFetchDate);
   }
@@ -23,7 +27,7 @@ if (UNSPLASH_API_KEY) {
     );
     if (document.getElementById("root")) {
       fetch(
-        "https://api.unsplash.com/photos/random/?orientation=landscape&query=gpu",
+        `https://api.unsplash.com/photos/random/?orientation=landscape${localStorage.getItem("unsplashApiQuery")}`,
         {
           method: "GET",
           headers: {
@@ -31,8 +35,20 @@ if (UNSPLASH_API_KEY) {
           },
         }
       )
-        .then((response) => response.json())
-        .then((response) => set(response.urls.small));
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else if (localStorage.getItem("fetchedBgImg") && window.navigator.onLine) {
+            throw new Error("Couldn't fetch new image, you may need to update your key. Reusing last image.");
+          } else if (window.navigator.onLine) {
+            throw new Error("Couldn't fetch new image, you may need to update your key.");
+          } else {
+            throw new Error("It doesn't seem you're connected to the internet.");
+          }})
+        .then((response) => set(response))
+        .catch((error) => {
+          console.log(error)
+        });
     }
   }
 
@@ -43,11 +59,9 @@ if (UNSPLASH_API_KEY) {
       localStorage.getItem("fetchedBgImg") == undefined
     ) {
       window.onload = () => {
-        document.getElementById(
-          "background"
-        ).style.backgroundImage = `url(${localStorage.getItem(
-          "fetchedBgImg"
-        )})`;
+        document.getElementById("background").style.backgroundImage = `url(${localStorage.getItem("fetchedBgImg")})`;
+        document.getElementById("imgCreator").innerText = ("Image by " + localStorage.getItem("unsplashApiCreditName") + " via Unsplash");
+        document.getElementById("imgCreator").setAttribute("href", localStorage.getItem("unsplashApiCreditLink"));
         console.log(
           `Hasn't been 2.5 minutes (Has only been ${(
             Date.now() / 60000 -
@@ -81,4 +95,11 @@ if (UNSPLASH_API_KEY) {
   setInterval(time, 1000);
 } else {
     location.href = "setKey.html"
+}
+
+//Reroll!
+document.getElementsByClassName("reload")[0].onclick = () => {
+  localStorage.removeItem("lastFetch");
+  localStorage.removeItem("lastFetchDate");
+  location.reload();
 }

@@ -1,8 +1,12 @@
 window.onload = () => {
     if (localStorage.getItem("unsplashApiKey")) {
-        document.getElementById("setKeyBox").value = localStorage.getItem("unsplashApiKey");
+        document.getElementById("setKeyBox").value =
+            localStorage.getItem("unsplashApiKey");
     } else {
         document.getElementById("cornerButton").classList.add("hide");
+    }
+    if (!localStorage.getItem("unsplashApiQuery")) {
+        localStorage.setItem("unsplashApiQuery", "")
     }
 };
 document.body.addEventListener("keydown", (e) => {

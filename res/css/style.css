@@ -22,7 +22,8 @@ body div#background {
 }
 html div#root,
 body div#root {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   margin: 0;
   height: 100vh;
   width: 100vw;
@@ -40,34 +41,9 @@ body div#root a[href]:hover {
   opacity: 0.75;
   transition: 0.1s ease-out;
 }
-html div#root div#setKeyContainer,
-body div#root div#setKeyContainer {
-  padding-top: 72px;
-  text-align: center;
-  overflow: hidden;
-}
-html div#root div#setKeyContainer span#setKeyInfo,
-body div#root div#setKeyContainer span#setKeyInfo {
-  display: block;
-  font-size: 24px;
-  margin-bottom: 6px;
-}
-html div#root div#setKeyContainer div#setKeyInfo,
-body div#root div#setKeyContainer div#setKeyInfo {
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 16px;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-html div#root div#setKeyContainer div#setKeyInfo p,
-body div#root div#setKeyContainer div#setKeyInfo p {
-  text-align: left;
-  margin-bottom: 6px;
-}
-html div#root div#setKeyContainer input#setKeyBox,
-body div#root div#setKeyContainer input#setKeyBox {
-  font-size: 14px;
+html div#root input,
+body div#root input {
+  font-size: 18px;
   width: 344px;
   text-align: center;
   font-family: "Consolas";
@@ -77,6 +53,39 @@ body div#root div#setKeyContainer input#setKeyBox {
   border: 2px grey solid;
   border-radius: 4px;
   outline: none;
+}
+html div#root button,
+body div#root button {
+  margin-top: 12px;
+  font-size: 20px;
+  width: 160px;
+  text-align: center;
+  font-family: "Consolas";
+  display: inline-block;
+  color: white;
+  background-color: rgb(44, 44, 44);
+  border: 2px grey solid;
+  border-radius: 4px;
+  outline: none;
+}
+html div#root div#setContainer,
+body div#root div#setContainer {
+  padding-top: 72px;
+  text-align: center;
+  overflow: hidden;
+}
+html div#root div#setContainer div#setInfo,
+body div#root div#setContainer div#setInfo {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+html div#root div#setContainer div#setInfo p,
+body div#root div#setContainer div#setInfo p {
+  text-align: left;
+  margin-bottom: 6px;
 }
 html div#root a#cornerButton,
 body div#root a#cornerButton {
@@ -88,18 +97,36 @@ body div#root a#cornerButton {
 }
 html div#root a#cornerButton.settings,
 body div#root a#cornerButton.settings {
-  content: url("res/gear.svg");
+  content: url("../gear.svg");
 }
 html div#root a#cornerButton.home,
 body div#root a#cornerButton.home {
-  content: url("res/home.svg");
+  position: absolute;
+  content: url("../home.svg");
+}
+html div#root a#cornerButton.reload,
+body div#root a#cornerButton.reload {
+  content: url("../reload.svg");
 }
 html div#root a#cornerButton.key,
 body div#root a#cornerButton.key {
-  content: url("res/key.svg");
+  content: url("../key.svg");
 }
 html div#root a#cornerButton:hover,
 body div#root a#cornerButton:hover {
+  opacity: 0.4;
+}
+html div#root a#imgCreator,
+body div#root a#imgCreator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 8px;
+  opacity: 0.3;
+  text-decoration: none;
+}
+html div#root a#imgCreator:hover,
+body div#root a#imgCreator:hover {
   opacity: 0.4;
 }
 html div#root div#timeContainer,

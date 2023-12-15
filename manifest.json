@@ -2,11 +2,16 @@
     "manifest_version": 3,
     "name": "Ecsta",
     "short_name": "Ecsta",
-    "version": "0.0.1",
+    "version": "0.1.0",
   
     "description": "A very simple new tab application meant to stay out of your way while still being a pleasant distraction for those who need something to look at while they think.",
 
     "icons": {
+        "32": "./res/icons/32.png",
+        "48": "./res/icons/48.png",
+        "64": "./res/icons/64.png",
+        "128": "./res/icons/128.png",
+        "256": "./res/icons/256.png"
     },
     
     "browser_specific_settings": {
@@ -16,7 +21,7 @@
     },
 
     "chrome_url_overrides": {
-        "newtab": "index.html"
+        "newtab": "./index.html"
     }
 }
   

@@ -2,20 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="res/css/style.css" />
     <title>New Tab</title>
-    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/32397453" />
+    <link rel="shortcut icon" href="res/icons/icon.ico" />
   </head>
   <body>
     <div id="background"></div>
     <div id="root">
-        <a id="cornerButton" class="settings" href="config.html">Settings</a>
-        <a id="cornerButton" class="key" href="setKey.html">Key</a>
+        <a id="cornerButton" class="settings" href="config.html" title="Settings">Settings</a>
+        <a id="cornerButton" class="reload" title="Reroll background">Reroll</a>
+        <a id="cornerButton" class="key" href="setKey.html" title="Access Key">Key</a>
         <div id="timeContainer">
             <span id="time-sec"></span>
             <span id="time"></span>
         </div>
+        <div id="creditContainer">
+            <a id="imgCreator" target="_blank"></a>
+        </div>
     </div>
-    <script src="script.js"></script>
+    <script src="res/js/index.js"></script>
   </body>
 </html>

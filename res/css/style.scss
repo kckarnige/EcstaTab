@@ -17,7 +17,8 @@ body {
         background-repeat: no-repeat;
     }
     div#root {
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: auto;
         a[href] {
             color: white;
             transition: 0.1s ease-out;
@@ -32,16 +33,36 @@ body {
         background-color: rgba(44, 44, 44, 0.25);
         -webkit-backdrop-filter: blur(15px);
         backdrop-filter: blur(15px);
-        div#setKeyContainer {
+        input {
+            font-size: 18px;
+            width: 344px;
+            text-align: center;
+            font-family: "Consolas";
+            display: inline-block;
+            color: white;
+            background-color: rgb(44, 44, 44);
+            border: 2px grey solid;
+            border-radius: 4px;
+            outline: none;
+        }
+        button {
+            margin-top: 12px;
+            font-size: 20px;
+            width: 160px;
+            text-align: center;
+            font-family: "Consolas";
+            display: inline-block;
+            color: white;
+            background-color: rgb(44, 44, 44);
+            border: 2px grey solid;
+            border-radius: 4px;
+            outline: none;
+        }
+        div#setContainer {
             padding-top: 72px;
             text-align: center;
             overflow: hidden;
-            span#setKeyInfo {
-                display: block;
-                font-size: 24px;
-                margin-bottom: 6px;
-            }
-            div#setKeyInfo {
+            div#setInfo {
                 margin-left: auto;
                 margin-right: auto;
                 font-size: 16px;
@@ -51,18 +72,6 @@ body {
                     margin-bottom: 6px;
                 }
             }
-            input#setKeyBox {
-                font-size: 14px;
-                width: 344px;
-                text-align: center;
-                font-family: "Consolas";
-                display: inline-block;
-                color: white;
-                background-color: rgb(44, 44, 44);
-                border: 2px grey solid;
-                border-radius: 4px;
-                outline: none;
-            }
         }
         a#cornerButton {
             position: relative;
@@ -71,14 +80,30 @@ body {
             opacity: 0.3;
             cursor: pointer;
             &.settings {
-                content: url("res/gear.svg");
+                content: url("../gear.svg");
             }
             &.home {
-                content: url("res/home.svg");
+                position: absolute;
+                content: url("../home.svg");
+            }
+            &.reload {
+                content: url("../reload.svg");
             }
             &.key {
-                content: url("res/key.svg");
+                content: url("../key.svg");
             }
+            &:hover {
+                opacity: 0.4;
+            }
+        }
+        
+        a#imgCreator {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin: 8px;
+            opacity: 0.3;
+            text-decoration: none;
             &:hover {
                 opacity: 0.4;
             }
