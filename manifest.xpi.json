@@ -1,5 +1,5 @@
 {
-    "manifest_version": 3,
+    "manifest_version": 2,
     "name": "Ecsta",
     "short_name": "Ecsta",
     "version": "0.1.0",
@@ -18,6 +18,10 @@
         "gecko": {
           "id": "Ecsta@kckarnige.github.io"
         }
+    },
+
+    "chrome_settings_overrides": {
+      "homepage": "./index.html"
     },
 
     "chrome_url_overrides": {
