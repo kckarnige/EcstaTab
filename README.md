@@ -1,7 +1,7 @@
 <p align="center">
     <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="./ecstasea-dark.png">
-        <img alt="logo" src="./ecstasea-light.png">
+        <source media="(prefers-color-scheme: dark)" srcset="./ecstasea-dark.svg">
+        <img alt="logo" src="./ecstasea-light.svg">
     </picture> 
 </p>
 <h1></h1>
