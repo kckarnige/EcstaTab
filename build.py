@@ -25,7 +25,7 @@ if sys.argv[1] == "xpi":
     os.rename("ecsta-firefox.zip","ecsta-firefox.xpi")
     shutil.move("ecsta-firefox.xpi",curDir+"\\dist\\ecsta-firefox.xpi")
     shutil.rmtree(curDir+"\\temp")
-    print('Built for Firefox! 🦊')
+    print('Built for Firefox! :D')
 else:
     if sys.argv[1] == "crx":
         if os.path.exists("ecsta-chromium.zip"):
@@ -37,7 +37,7 @@ else:
         os.rename("ecsta-chromium.zip","ecsta-chromium.crx")
         shutil.move("ecsta-chromium.crx",curDir+"\\dist\\ecsta-chromium.crx")
         shutil.rmtree(curDir+"\\temp")
-        print('Built for Chromium! 🌐')
+        print('Built for Chromium! :D')
     else:
         shutil.rmtree(curDir+"\\temp")
         print('Build failed')
