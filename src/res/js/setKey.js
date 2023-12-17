@@ -6,7 +6,7 @@ window.onload = () => {
         document.getElementById("cornerButton").classList.add("hide");
     }
     if (!localStorage.getItem("unsplashApiQuery")) {
-        localStorage.setItem("unsplashApiQuery", "")
+        localStorage.setItem("unsplashApiQuery", "&query=sea")
     }
 };
 document.body.addEventListener("keydown", (e) => {

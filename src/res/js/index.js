@@ -11,7 +11,7 @@ if (UNSPLASH_API_KEY) {
     localStorage.setItem("fetchedBgImg", fetched.urls.small + "");
     document.getElementById("background").style.backgroundImage = `url(${fetched.urls.small})`;
     localStorage.setItem("unsplashApiCreditName", fetched.user.name + "");
-    document.getElementById("imgCreator").innerText = ("Image by " + fetched.user.name + " via Unsplash");
+    document.getElementById("imgCreator").innerText = ("Image by " + fetched.user.name);
     localStorage.setItem("unsplashApiCreditLink", fetched.user.links.html + "");
     document.getElementById("imgCreator").setAttribute("href", fetched.user.links.html);
     console.log("Using fetched image");
@@ -60,7 +60,7 @@ if (UNSPLASH_API_KEY) {
     ) {
       window.onload = () => {
         document.getElementById("background").style.backgroundImage = `url(${localStorage.getItem("fetchedBgImg")})`;
-        document.getElementById("imgCreator").innerText = ("Image by " + localStorage.getItem("unsplashApiCreditName") + " via Unsplash");
+        document.getElementById("imgCreator").innerText = ("Image by " + localStorage.getItem("unsplashApiCreditName"));
         document.getElementById("imgCreator").setAttribute("href", localStorage.getItem("unsplashApiCreditLink"));
         console.log(
           `Hasn't been 2.5 minutes (Has only been ${(
