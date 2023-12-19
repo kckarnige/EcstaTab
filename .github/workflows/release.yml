@@ -60,12 +60,19 @@ jobs:
           path: 'manifest.xpi.json'
           prop_path: 'version'
 
+      - uses: dev-drprasad/delete-tag-and-release@v0.2.1
+        with:
+          delete_release: true
+          tag_name: devbuild
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Create the release
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{steps.version.outputs.prop}} 
+          tag_name: devbuild
           name: Ecsta - Test build ${{steps.version.outputs.prop}} 
           draft: false
           prerelease: true
