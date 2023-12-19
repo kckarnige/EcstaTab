@@ -30,12 +30,9 @@ else:
     if sys.argv[1] == "crx":
         if os.path.exists("ecsta-chromium.zip"):
             os.remove("ecsta-chromium.zip")
-        if os.path.exists("ecsta-chromium.crx"):
-            os.remove("ecsta-chromium.crx")
         shutil.copy(curDir+"\\manifest.crx.json", curDir+"\\temp\\manifest.json")
         shutil.make_archive("ecsta-chromium", "zip", curDir+"\\temp")
-        os.rename("ecsta-chromium.zip","ecsta-chromium.crx")
-        shutil.move("ecsta-chromium.crx",curDir+"\\dist\\ecsta-chromium.crx")
+        shutil.move("ecsta-chromium.zip",curDir+"\\dist\\ecsta-chromium.zip")
         shutil.rmtree(curDir+"\\temp")
         print('Built for Chromium! :D')
     else:

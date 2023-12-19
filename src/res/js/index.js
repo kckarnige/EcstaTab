@@ -7,11 +7,13 @@ if (UNSPLASH_API_KEY) {
   //Background code
   function set(fetched) {
     localStorage.setItem("fetchedBgImg", fetched.urls.small + "");
-    document.getElementById("background").style.backgroundImage = `url(${fetched.urls.small})`;
     localStorage.setItem("unsplashApiCreditName", fetched.user.name + "");
-    document.getElementById("imgCreator").innerText = ("Image by " + fetched.user.name);
     localStorage.setItem("unsplashApiCreditLink", fetched.user.links.html + "");
-    document.getElementById("imgCreator").setAttribute("href", fetched.user.links.html);
+    document.getElementById("background").style.backgroundImage = `url(${fetched.urls.small})`;
+    if (document.getElementById("imgCreator")) {
+      document.getElementById("imgCreator").innerText = ("Image by " + fetched.user.name);
+      document.getElementById("imgCreator").setAttribute("href", fetched.user.links.html);
+    }
     console.log("Using fetched image");
     console.log(fetched.urls.small);
     console.log(getLastFetch);
@@ -58,8 +60,10 @@ if (UNSPLASH_API_KEY) {
     ) {
       window.onload = () => {
         document.getElementById("background").style.backgroundImage = `url(${localStorage.getItem("fetchedBgImg")})`;
-        document.getElementById("imgCreator").innerText = ("Image by " + localStorage.getItem("unsplashApiCreditName"));
-        document.getElementById("imgCreator").setAttribute("href", localStorage.getItem("unsplashApiCreditLink"));
+        if (document.getElementById("imgCreator")) {
+          document.getElementById("imgCreator").innerText = ("Image by " + localStorage.getItem("unsplashApiCreditName"));
+          document.getElementById("imgCreator").setAttribute("href", localStorage.getItem("unsplashApiCreditLink"));
+        }
         console.log(
           `Hasn't been 2.5 minutes (Has only been ${(
             Date.now() / 60000 -
@@ -79,27 +83,30 @@ if (UNSPLASH_API_KEY) {
   }
 
   //Time
-  function time() {
-    var d = new Date();
-    document.getElementById("time").textContent = d.toLocaleTimeString([], {
-      timeStyle: "short",
-      hour12: true,
-    });
-    document.getElementById("time-sec").textContent = (
-      "0" + d.getSeconds()
-    ).slice(-2);
-  }
   if (document.getElementById("time")) {
+    function time() {
+      var d = new Date();
+      document.getElementById("time").textContent = d.toLocaleTimeString([], {
+        timeStyle: "short",
+        hour12: true,
+      });
+      document.getElementById("time-sec").textContent = (
+        "0" + d.getSeconds()
+      ).slice(-2);
+    }
     time();
+    setInterval(time, 1000);
   }
-  setInterval(time, 1000);
 } else if (!(window.location.href.indexOf("setKey.html") > -1)) {
     location.href = "setKey.html"
 }
 
 //Reroll!
-document.getElementsByClassName("reload")[0].onclick = () => {
-  localStorage.removeItem("lastFetch");
-  localStorage.removeItem("lastFetchDate");
-  location.reload();
+if (document.getElementsByClassName("reload")[0]) {
+    var reload = document.getElementsByClassName("reload")[0]
+    reload.addEventListener("click", () => {
+      localStorage.removeItem("lastFetch");
+      localStorage.removeItem("lastFetchDate");
+      location.reload();
+    });
 }
