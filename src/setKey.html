@@ -7,14 +7,13 @@
         div#background {
             background-image: url("res/background.png");
         }
-        div#root {
-            -webkit-backdrop-filter: blur(2px) !important;
-            backdrop-filter: blur(2px) !important;
-        }
         a#cornerButton {
             position: absolute;
         }
     </style>
+    <script>
+        localStorage.setItem("currentPage", "key")
+    </script>
     <link rel="shortcut icon" href="res/icons/icon.ico" />
     <title>Ecsta - Set API Key</title>
   </head>
@@ -36,5 +35,6 @@
         </div>
     </div>
     <script src="res/js/setKey.js"></script>
-  </body>
+    <script src="res/js/index.js"></script>
+</body>
 </html>

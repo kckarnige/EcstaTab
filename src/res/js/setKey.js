@@ -1,4 +1,7 @@
 window.onload = () => {
+    if (localStorage.getItem("fetchedBgImg")) {
+        document.getElementById("background").style.backgroundImage = `url(${localStorage.getItem("fetchedBgImg")})`;
+    }
     if (localStorage.getItem("unsplashApiKey")) {
         document.getElementById("setKeyBox").value =
             localStorage.getItem("unsplashApiKey");
@@ -17,7 +20,9 @@ document.body.addEventListener("keydown", (e) => {
                 document.getElementById("setKeyBox").value
             );
             alert(`Successfully set!`);
-            document.getElementById("cornerButton").classList.remove("hide");
+            if (document.getElementsByClassName("hide")[0]) {
+                location.href = "index.html"
+            }
         } else {
             alert(`Must be a 43 character Unsplash access key.`);
         }

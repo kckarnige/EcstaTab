@@ -18,10 +18,10 @@ jobs:
           python-version: 3.10.11
           architecture: x64
 
-      - name: Build and pack (XPI)
+      - name: Build and pack for Firefox
         run: python3 build.py xpi
         
-      - name: Build and pack (CRX)
+      - name: Build and pack for Chromium
         run: python3 build.py crx
         
       - name: Upload Firefox Artifact
@@ -66,9 +66,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{steps.version.outputs.prop}} 
-          name: Ecsta - ${{steps.version.outputs.prop}} 
+          name: Ecsta - Test build ${{steps.version.outputs.prop}} 
           draft: true
-          prerelease: false
+          prerelease: true
           body_path: .github/release.md
           files: |
             release/ecsta-chromium.crx

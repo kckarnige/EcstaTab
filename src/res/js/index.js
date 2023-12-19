@@ -1,5 +1,3 @@
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
 const getLastFetch = localStorage.getItem("lastFetch");
 const getLastFetchDate = localStorage.getItem("lastFetchDate");
 const UNSPLASH_API_KEY = localStorage.getItem("unsplashApiKey");
@@ -91,9 +89,11 @@ if (UNSPLASH_API_KEY) {
       "0" + d.getSeconds()
     ).slice(-2);
   }
-  time();
+  if (document.getElementById("time")) {
+    time();
+  }
   setInterval(time, 1000);
-} else {
+} else if (!(window.location.href.indexOf("setKey.html") > -1)) {
     location.href = "setKey.html"
 }
 

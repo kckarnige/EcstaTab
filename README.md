@@ -14,19 +14,45 @@ As of now the only setting available is exactly that.
 It can be found by clicking the gear icon in the corner.
 
 ## Installation
-WiP
 
-## Installation from Source
-### Build (Automated)
-Open your terminal and run `build.py` with the argument of what type of extension you want.
+[![firefox](https://blog.mozilla.org/addons/files/2015/11/get-the-addon.png)](https://addons.mozilla.org/en-US/firefox/addon/ecsta/)
+
+### Installation from Source
+<details>
+  <summary>Firefox</summary>
+
+  1. Copy the `manifest.xpi.json` file to the `src` directory
+
+  2. Rename it to `manifest.json`
+  <details>
+  <summary>3. Open your extension settings and click on the gear icon</summary>
+  
+  ![help1](./help1.png)
+  </details>
+
+  4. Click "Debug Add-ons"
+
+  5. Click "Load temporary Add-on..." and find the `src` directory
+</details>
+
+<details>
+  <summary>Chromium</summary>
+
+  1. Copy the `manifest.crx.json` file to the `src` directory
+
+  2. Rename it to `manifest.json`
+  
+  3. Open your extension settings
+
+  4. Toggle developer mode *(Usually located on the same page)*
+
+  5. Click "Load unpacked" and find the `src` directory
+</details>
+
+### Build from Source
+With Python installed, run `build.py` in your terminal with the argument of what type of extension you want.
 
 Chromium: `python3 build.py crx`    
 Firefox: `python3 build.py xpi` 
 
 > *This has only been tested with Python 3 on Windows*
-
-### Build (Manual)
-Figure it out.
-
-### Installation
-WiP

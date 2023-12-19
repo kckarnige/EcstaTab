@@ -43,7 +43,7 @@ body div#root a[href]:hover {
 }
 html div#root input,
 body div#root input {
-  font-size: 18px;
+  font-size: 14px;
   width: 344px;
   text-align: center;
   font-family: "Consolas";
