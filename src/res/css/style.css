@@ -95,6 +95,10 @@ body div#root a#cornerButton {
   opacity: 0.3;
   cursor: pointer;
 }
+html div#root a#cornerButton.bottomCorner,
+body div#root a#cornerButton.bottomCorner {
+  bottom: 0;
+}
 html div#root a#cornerButton.settings,
 body div#root a#cornerButton.settings {
   content: url("../gear.svg");
@@ -103,6 +107,11 @@ html div#root a#cornerButton.home,
 body div#root a#cornerButton.home {
   position: absolute;
   content: url("../home.svg");
+}
+html div#root a#cornerButton.gh,
+body div#root a#cornerButton.gh {
+  position: absolute;
+  content: url("../github.svg");
 }
 html div#root a#cornerButton.reload,
 body div#root a#cornerButton.reload {

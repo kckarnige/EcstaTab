@@ -79,12 +79,19 @@ body {
             width: 18px;
             opacity: 0.3;
             cursor: pointer;
+            &.bottomCorner {
+                bottom: 0;
+            }
             &.settings {
                 content: url("../gear.svg");
             }
             &.home {
                 position: absolute;
                 content: url("../home.svg");
+            }
+            &.gh {
+                position: absolute;
+                content: url("../github.svg");
             }
             &.reload {
                 content: url("../reload.svg");

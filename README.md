@@ -6,6 +6,8 @@
 </p>
 <h1></h1>
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/kckarnige)
+
 ### What is this?
 A very simple new tab page extension meant to stay out of your way while still being a pleasant distraction for those who need something to look at while they think.
 
