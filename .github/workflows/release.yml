@@ -33,8 +33,8 @@ jobs:
       - name: Upload Chromium Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: ecsta-chromium.crx
-          path: dist/ecsta-chromium.crx
+          name: ecsta-chromium.zip
+          path: dist/ecsta-chromium.zip
 
   release:
     runs-on: ubuntu-latest
@@ -45,7 +45,7 @@ jobs:
 
       - uses: actions/download-artifact@v2
         with:
-          name: ecsta-chromium.crx
+          name: ecsta-chromium.zip
           path: release
           
       - uses: actions/download-artifact@v2
@@ -78,5 +78,5 @@ jobs:
           prerelease: true
           body_path: .github/release.md
           files: |
-            release/ecsta-chromium.crx
+            release/ecsta-chromium.zip
             release/ecsta-firefox.xpi
