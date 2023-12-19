@@ -75,8 +75,9 @@ body {
         }
         div#cornerButtonContainer {
             position: absolute;
+            overflow: hidden;
             &.bottomCorner {
-            bottom: 0;
+                bottom: 0;
             }
             a#cornerButton {
                 position: relative;

@@ -90,6 +90,7 @@ body div#root div#setContainer div#setInfo p {
 html div#root div#cornerButtonContainer,
 body div#root div#cornerButtonContainer {
   position: absolute;
+  overflow: hidden;
 }
 html div#root div#cornerButtonContainer.bottomCorner,
 body div#root div#cornerButtonContainer.bottomCorner {
