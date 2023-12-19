@@ -17,7 +17,10 @@
   <body>
     <div id="background"></div>
     <div id="root">
-        <a id="cornerButton" class="home" href="index.html">Back</a>
+        <div id="cornerButtonContainer">
+            <a id="cornerButton" class="home" href="index.html">Back</a>
+            <a id="cornerButton" class="settings" href="config.html" title="Settings">Settings</a>
+        </div>
         <div id="setContainer">
             <div id="setInfo">
                 <h1>Instructions</h1>
@@ -30,7 +33,10 @@
             </div>
             <input id="setKeyBox" maxlength="43" placeholder="Access Key" />
         </div>
-        <a id="cornerButton" class="bottomCorner gh" href="https://github.com/kckarnige/EcstaTab" title="GitHub" target="_blank">GH</a>
+        <div id="cornerButtonContainer" class="bottomCorner">
+            <a id="cornerButton" class="gh" href="https://github.com/kckarnige/EcstaTab" title="GitHub" target="_blank">GH</a>
+            <a id="cornerButton" class="kofi" href="https://ko-fi.com/kckarnige" title="Buy me a Ko-fi!" target="_blank">Ko-fi</a>
+        </div>
     </div>
     <script src="res/js/index.js"></script>
     <script src="res/js/setKey.js"></script>

@@ -54,7 +54,7 @@ if (UNSPLASH_API_KEY) {
 
   if (getLastFetch && getLastFetchDate) {
     if (
-      getLastFetch / 60000 >= Date.now() / 60000 - 2.5 ||
+      getLastFetch / 60000 >= Date.now() / 60000 - 3 ||
       getLastFetchDate != currentDate ||
       localStorage.getItem("fetchedBgImg") == undefined
     ) {
@@ -65,7 +65,7 @@ if (UNSPLASH_API_KEY) {
           document.getElementById("imgCreator").setAttribute("href", localStorage.getItem("unsplashApiCreditLink"));
         }
         console.log(
-          `Hasn't been 2.5 minutes (Has only been ${(
+          `Hasn't been 3 minutes (Has only been ${(
             Date.now() / 60000 -
             getLastFetch / 60000
           ).toFixed(1)}), nor has a full day passed (failsafe solution)`
