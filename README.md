@@ -17,6 +17,8 @@ It can be found by clicking the gear icon in the corner.
 
 [![firefox](https://blog.mozilla.org/addons/files/2015/11/get-the-addon.png)](https://addons.mozilla.org/en-US/firefox/addon/ecstatab/)
 
+[![chromium](https://storage.googleapis.com/web-dev-uploads/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/UV4C4ybeBTsZt43U4xis.png)](https://chromewebstore.google.com/detail/ecsta/jpdnfbcjclmhlebikidldibdlgjindpl)
+
 ### Installation from Source
 <details>
   <summary>Firefox</summary>
