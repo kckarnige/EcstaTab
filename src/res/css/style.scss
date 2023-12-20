@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-html,
 body {
     font-size: 16px;
     margin: 0;
@@ -47,6 +46,7 @@ body {
         }
         button {
             margin-top: 12px;
+            cursor: pointer;
             font-size: 20px;
             width: 160px;
             text-align: center;
@@ -57,6 +57,13 @@ body {
             border: 2px grey solid;
             border-radius: 4px;
             outline: none;
+            &:hover {
+                color: lightgray;
+            }
+            &:active {
+                color: grey;
+                background-color: rgb(33, 33, 33);
+            }
         }
         div#setContainer {
             padding-top: 72px;
@@ -74,6 +81,7 @@ body {
             }
         }
         div#cornerButtonContainer {
+            height: 36px;
             position: absolute;
             overflow: hidden;
             &.bottomCorner {
@@ -96,7 +104,20 @@ body {
                     background-color: currentColor;
                     color: #fff;
                 }
+                &.config {
+                    content: url("../space.svg");
+                    mask-image: url("../config.svg");
+                    mask-size: 100%;
+                    mask-position: center center;
+                    mask-repeat: no-repeat;
+                    background-repeat: no-repeat;
+                    background-color: currentColor;
+                    color: #fff;
+                }
                 &.home {
+                    position: absolute;
+                    right: 0;
+                    float: right;
                     content: url("../space.svg");
                     mask-image: url("../home.svg");
                     mask-size: 100%;
@@ -116,7 +137,7 @@ body {
                     background-color: currentColor;
                     color: #fff;
                 }
-                &.kofi {
+                &.ko-fi {
                     content: url("../space.svg");
                     mask-image: url("../kofi.svg");
                     mask-size: 100%;
@@ -155,7 +176,25 @@ body {
                 }
             }
         }
-        
+        div#settingsPanelContainer {
+            height: 100vh;
+            width: 36vw;
+            overflow: hidden;
+            display: none;
+            position: absolute;
+            iframe#settingsPanel {
+                margin: 0;
+                border: none;
+                left: 0;
+                float: left;
+                height: 100vh;
+                width: 36vw;
+                position: absolute;
+                border-top-right-radius: 16px;
+                border-bottom-right-radius: 16px;
+                box-shadow: 3px #000;
+            }
+        }
         a#imgCreator {
             position: absolute;
             bottom: 0;

@@ -107,6 +107,11 @@ if (document.getElementsByClassName("reload")[0]) {
     reload.addEventListener("click", () => {
       localStorage.removeItem("lastFetch");
       localStorage.removeItem("lastFetchDate");
-      location.reload();
+      window.location.reload();
     });
 }
+
+document.getElementsByClassName("settings")[0].addEventListener("click", () => {
+    document.getElementById("settingsPanelContainer").style.display = "block"
+    document.getElementsByClassName("options")[0].style.display = "none";
+})

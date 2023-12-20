@@ -3,22 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="res/css/style.css" />
-    <style>
-        div#background {
-            background-image: url("res/background.png");
-        }
-        a#cornerButton {
-            position: absolute;
-        }
-    </style>
     <link rel="shortcut icon" href="res/icons/icon.ico" />
-    <title>Ecsta - Set API Key</title>
   </head>
   <body>
     <div id="background"></div>
     <div id="root">
         <div id="cornerButtonContainer">
-          <a id="cornerButton" class="home" href="index.html">Back</a>
+            <a id="cornerButton" class="settings" title="Close Settings">Close Settings</a>
             <a id="cornerButton" class="key" href="setKey.html" title="Access Key">Key</a>
         </div>
         <div id="setContainer">
@@ -30,12 +21,7 @@
             <button id="resetQuery">Reset</button>
             <button id="saveSettings">Save</button>
         </div>
-        <div id="cornerButtonContainer" class="bottomCorner">
-            <a id="cornerButton" class="gh" href="https://github.com/kckarnige/EcstaTab" title="GitHub" target="_blank">GH</a>
-            <a id="cornerButton" class="kofi" href="https://ko-fi.com/kckarnige" title="Buy me a Ko-fi!" target="_blank">Ko-fi</a>
-        </div>
     </div>
-    <script src="res/js/index.js"></script>
     <script src="res/js/config.js"></script>
   </body>
 </html>

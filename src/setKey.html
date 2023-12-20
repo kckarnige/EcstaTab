@@ -5,10 +5,10 @@
     <link rel="stylesheet" href="res/css/style.css" />
     <style>
         div#background {
-            background-image: url("res/background.png");
+            direction: ltr;
         }
-        a#cornerButton {
-            position: absolute;
+        div#root {
+            direction: ltr;
         }
     </style>
     <link rel="shortcut icon" href="res/icons/icon.ico" />
@@ -18,8 +18,8 @@
     <div id="background"></div>
     <div id="root">
         <div id="cornerButtonContainer">
-            <a id="cornerButton" class="home" href="index.html">Back</a>
-            <a id="cornerButton" class="settings" href="config.html" title="Settings">Settings</a>
+            <a id="cornerButton" class="settings" title="Close Settings">Close Settings</a>
+            <a id="cornerButton" class="config" href="config.html" title="Config">Config</a>
         </div>
         <div id="setContainer">
             <div id="setInfo">
@@ -33,12 +33,7 @@
             </div>
             <input id="setKeyBox" maxlength="43" placeholder="Access Key" />
         </div>
-        <div id="cornerButtonContainer" class="bottomCorner">
-            <a id="cornerButton" class="gh" href="https://github.com/kckarnige/EcstaTab" title="GitHub" target="_blank">GH</a>
-            <a id="cornerButton" class="kofi" href="https://ko-fi.com/kckarnige" title="Buy me a Ko-fi!" target="_blank">Ko-fi</a>
-        </div>
     </div>
-    <script src="res/js/index.js"></script>
     <script src="res/js/setKey.js"></script>
 </body>
 </html>

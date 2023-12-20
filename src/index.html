@@ -9,8 +9,8 @@
   <body>
     <div id="background"></div>
     <div id="root">
-        <div id="cornerButtonContainer">
-            <a id="cornerButton" class="settings" href="config.html" title="Settings">Settings</a>
+        <div id="cornerButtonContainer" class="options">
+            <a id="cornerButton" class="settings" title="Open Settings">Open Settings</a>
             <a id="cornerButton" class="reload" title="Reroll background">Reroll</a>
         </div>
         <div id="timeContainer">
@@ -22,7 +22,13 @@
         </div>
         <div id="cornerButtonContainer" class="bottomCorner">
             <a id="cornerButton" class="gh" href="https://github.com/kckarnige/EcstaTab" title="GitHub" target="_blank">GH</a>
-            <a id="cornerButton" class="kofi" href="https://ko-fi.com/kckarnige" title="Buy me a Ko-fi!" target="_blank">Ko-fi</a>
+            <a id="cornerButton" class="ko-fi" href="https://ko-fi.com/kckarnige" title="Buy me a Ko-fi!" target="_blank">Ko-fi</a>
+        </div>
+        <div id="settingsPanelContainer">
+            <iframe id="settingsPanel" src="config.html" allowtransparency="true">Looks like the iFrame couldn't load :/</iframe>
+            <div id="cornerButtonContainer">
+                <a id="cornerButton" class="home" href="index.html">Back</a>
+            </div>
         </div>
     </div>
     <script src="res/js/index.js"></script>

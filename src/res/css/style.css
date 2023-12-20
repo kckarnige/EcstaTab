@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
-html,
 body {
   font-size: 16px;
   margin: 0;
@@ -10,7 +9,6 @@ body {
      -moz-user-select: none;
           user-select: none;
 }
-html div#background,
 body div#background {
   margin: 0;
   height: 100vh;
@@ -20,7 +18,6 @@ body div#background {
   background-position: center;
   background-repeat: no-repeat;
 }
-html div#root,
 body div#root {
   overflow-x: hidden;
   overflow-y: auto;
@@ -31,17 +28,14 @@ body div#root {
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
 }
-html div#root a[href],
 body div#root a[href] {
   color: white;
   transition: 0.1s ease-out;
 }
-html div#root a[href]:hover,
 body div#root a[href]:hover {
   opacity: 0.75;
   transition: 0.1s ease-out;
 }
-html div#root input,
 body div#root input {
   font-size: 14px;
   width: 344px;
@@ -54,9 +48,9 @@ body div#root input {
   border-radius: 4px;
   outline: none;
 }
-html div#root button,
 body div#root button {
   margin-top: 12px;
+  cursor: pointer;
   font-size: 20px;
   width: 160px;
   text-align: center;
@@ -68,13 +62,18 @@ body div#root button {
   border-radius: 4px;
   outline: none;
 }
-html div#root div#setContainer,
+body div#root button:hover {
+  color: lightgray;
+}
+body div#root button:active {
+  color: grey;
+  background-color: rgb(33, 33, 33);
+}
 body div#root div#setContainer {
   padding-top: 72px;
   text-align: center;
   overflow: hidden;
 }
-html div#root div#setContainer div#setInfo,
 body div#root div#setContainer div#setInfo {
   margin-left: auto;
   margin-right: auto;
@@ -82,21 +81,18 @@ body div#root div#setContainer div#setInfo {
   width: -moz-fit-content;
   width: fit-content;
 }
-html div#root div#setContainer div#setInfo p,
 body div#root div#setContainer div#setInfo p {
   text-align: left;
   margin-bottom: 6px;
 }
-html div#root div#cornerButtonContainer,
 body div#root div#cornerButtonContainer {
+  height: 36px;
   position: absolute;
   overflow: hidden;
 }
-html div#root div#cornerButtonContainer.bottomCorner,
 body div#root div#cornerButtonContainer.bottomCorner {
   bottom: 0;
 }
-html div#root div#cornerButtonContainer a#cornerButton,
 body div#root div#cornerButtonContainer a#cornerButton {
   position: relative;
   margin: 8px;
@@ -105,7 +101,6 @@ body div#root div#cornerButtonContainer a#cornerButton {
   transition: 0.4s;
   cursor: pointer;
 }
-html div#root div#cornerButtonContainer a#cornerButton.settings,
 body div#root div#cornerButtonContainer a#cornerButton.settings {
   content: url("../space.svg");
   -webkit-mask-image: url("../gear.svg");
@@ -120,8 +115,24 @@ body div#root div#cornerButtonContainer a#cornerButton.settings {
   background-color: currentColor;
   color: #fff;
 }
-html div#root div#cornerButtonContainer a#cornerButton.home,
+body div#root div#cornerButtonContainer a#cornerButton.config {
+  content: url("../space.svg");
+  -webkit-mask-image: url("../config.svg");
+          mask-image: url("../config.svg");
+  -webkit-mask-size: 100%;
+          mask-size: 100%;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-color: currentColor;
+  color: #fff;
+}
 body div#root div#cornerButtonContainer a#cornerButton.home {
+  position: absolute;
+  right: 0;
+  float: right;
   content: url("../space.svg");
   -webkit-mask-image: url("../home.svg");
           mask-image: url("../home.svg");
@@ -135,7 +146,6 @@ body div#root div#cornerButtonContainer a#cornerButton.home {
   background-color: currentColor;
   color: #fff;
 }
-html div#root div#cornerButtonContainer a#cornerButton.gh,
 body div#root div#cornerButtonContainer a#cornerButton.gh {
   content: url("../space.svg");
   -webkit-mask-image: url("../github.svg");
@@ -150,8 +160,7 @@ body div#root div#cornerButtonContainer a#cornerButton.gh {
   background-color: currentColor;
   color: #fff;
 }
-html div#root div#cornerButtonContainer a#cornerButton.kofi,
-body div#root div#cornerButtonContainer a#cornerButton.kofi {
+body div#root div#cornerButtonContainer a#cornerButton.ko-fi {
   content: url("../space.svg");
   -webkit-mask-image: url("../kofi.svg");
           mask-image: url("../kofi.svg");
@@ -165,11 +174,9 @@ body div#root div#cornerButtonContainer a#cornerButton.kofi {
   background-color: currentColor;
   color: #fff;
 }
-html div#root div#cornerButtonContainer a#cornerButton.kofi:hover,
-body div#root div#cornerButtonContainer a#cornerButton.kofi:hover {
+body div#root div#cornerButtonContainer a#cornerButton.ko-fi:hover {
   color: #ff5e5b;
 }
-html div#root div#cornerButtonContainer a#cornerButton.reload,
 body div#root div#cornerButtonContainer a#cornerButton.reload {
   content: url("../space.svg");
   -webkit-mask-image: url("../reload.svg");
@@ -184,7 +191,6 @@ body div#root div#cornerButtonContainer a#cornerButton.reload {
   background-color: currentColor;
   color: #fff;
 }
-html div#root div#cornerButtonContainer a#cornerButton.key,
 body div#root div#cornerButtonContainer a#cornerButton.key {
   content: url("../space.svg");
   -webkit-mask-image: url("../key.svg");
@@ -199,12 +205,29 @@ body div#root div#cornerButtonContainer a#cornerButton.key {
   background-color: currentColor;
   color: #fff;
 }
-html div#root div#cornerButtonContainer a#cornerButton:hover,
 body div#root div#cornerButtonContainer a#cornerButton:hover {
   transition: 0.2s;
   opacity: 0.7;
 }
-html div#root a#imgCreator,
+body div#root div#settingsPanelContainer {
+  height: 100vh;
+  width: 36vw;
+  overflow: hidden;
+  display: none;
+  position: absolute;
+}
+body div#root div#settingsPanelContainer iframe#settingsPanel {
+  margin: 0;
+  border: none;
+  left: 0;
+  float: left;
+  height: 100vh;
+  width: 36vw;
+  position: absolute;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  box-shadow: 3px #000;
+}
 body div#root a#imgCreator {
   position: absolute;
   bottom: 0;
@@ -213,11 +236,9 @@ body div#root a#imgCreator {
   opacity: 0.3;
   text-decoration: none;
 }
-html div#root a#imgCreator:hover,
 body div#root a#imgCreator:hover {
   opacity: 0.4;
 }
-html div#root div#timeContainer,
 body div#root div#timeContainer {
   float: right;
   right: 0;
@@ -225,13 +246,11 @@ body div#root div#timeContainer {
   margin-top: 8px;
   margin-right: 12px;
 }
-html div#root div#timeContainer span#time-sec,
 body div#root div#timeContainer span#time-sec {
   font-family: "Consolas";
   font-size: 24px;
   opacity: 0.5;
 }
-html div#root .hide,
 body div#root .hide {
   display: none !important;
 }/*# sourceMappingURL=style.css.map */

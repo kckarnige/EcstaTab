@@ -1,12 +1,16 @@
+if (localStorage.getItem("lastFetch")) {
+    document.getElementById("background").style.background = "transparent";
+    document.getElementById("root").style.background = "rgba(255,255,255,0.05)";
+    document.getElementById("root").style.backdropFilter = "blur(15px)";
+    document.body.style.background = "transparent";
+}
+
 window.onload = () => {
-    if (localStorage.getItem("fetchedBgImg")) {
-        document.getElementById("background").style.backgroundImage = `url(${localStorage.getItem("fetchedBgImg")})`;
-    }
     if (localStorage.getItem("unsplashApiKey")) {
         document.getElementById("setKeyBox").value =
             localStorage.getItem("unsplashApiKey");
     } else {
-        document.getElementById("cornerButton").classList.add("hide");
+        document.getElementById("cornerButtonContainer").classList.add("hide");
     }
     if (!localStorage.getItem("unsplashApiQuery")) {
         localStorage.setItem("unsplashApiQuery", "&query=sea")
@@ -28,3 +32,7 @@ document.body.addEventListener("keydown", (e) => {
         }
     }
 });
+document.getElementsByClassName("settings")[0].addEventListener("click", () => {
+    parent.document.getElementById("settingsPanelContainer").style.display = "none"
+    parent.document.getElementsByClassName("options")[0].style.display = "block";
+})
