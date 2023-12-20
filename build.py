@@ -18,12 +18,9 @@ os.remove(curDir+"\\temp\\res\\heknows.png")
 if sys.argv[1] == "xpi":
     if os.path.exists("ecsta-firefox.zip"):
         os.remove("ecsta-firefox.zip")
-    if os.path.exists("ecsta-firefox.xpi"):
-        os.remove("ecsta-firefox.xpi")
     shutil.copy(curDir+"\\manifest.xpi.json", curDir+"\\temp\\manifest.json")
     shutil.make_archive("ecsta-firefox", "zip", curDir+"\\temp")
-    os.rename("ecsta-firefox.zip","ecsta-firefox.xpi")
-    shutil.move("ecsta-firefox.xpi",curDir+"\\dist\\ecsta-firefox.xpi")
+    shutil.move("ecsta-firefox.zip",curDir+"\\dist\\ecsta-firefox.zip")
     shutil.rmtree(curDir+"\\temp")
     print('Built for Firefox! :D')
 else:
