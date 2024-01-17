@@ -13,6 +13,10 @@
         "128": "./res/icons/128.png",
         "256": "./res/icons/256.png"
     },
+    
+    "permissions": [
+      "tabs"
+    ],
 
     "chrome_url_overrides": {
         "newtab": "./index.html"

@@ -44,7 +44,8 @@ if (UNSPLASH_API_KEY) {
             throw new Error("Couldn't fetch new image, you may need to update your key.");
           } else {
             throw new Error("It doesn't seem you're connected to the internet.");
-          }})
+          }
+        })
         .then((response) => set(response))
         .catch((error) => {
           console.log(error)
@@ -98,20 +99,20 @@ if (UNSPLASH_API_KEY) {
     setInterval(time, 1000);
   }
 } else if (!(window.location.href.indexOf("setKey.html") > -1)) {
-    location.href = "setKey.html"
+  location.href = "setKey.html"
 }
 
 //Reroll!
 if (document.getElementsByClassName("reload")[0]) {
-    var reload = document.getElementsByClassName("reload")[0]
-    reload.addEventListener("click", () => {
-      localStorage.removeItem("lastFetch");
-      localStorage.removeItem("lastFetchDate");
-      window.location.reload();
-    });
+  var reload = document.getElementsByClassName("reload")[0]
+  reload.addEventListener("click", () => {
+    localStorage.removeItem("lastFetch");
+    localStorage.removeItem("lastFetchDate");
+    window.location.reload();
+  });
 }
 
 document.getElementsByClassName("settings")[0].addEventListener("click", () => {
-    document.getElementById("settingsPanelContainer").style.display = "block"
-    document.getElementsByClassName("options")[0].style.display = "none";
+  document.getElementById("settingsPanelContainer").style.display = "block"
+  document.getElementsByClassName("options")[0].style.display = "none";
 })

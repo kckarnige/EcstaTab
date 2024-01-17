@@ -182,6 +182,7 @@ body {
             overflow: hidden;
             display: none;
             position: absolute;
+            background-color: transparent !important;
             iframe#settingsPanel {
                 margin: 0;
                 border: none;
@@ -192,7 +193,9 @@ body {
                 position: absolute;
                 border-top-right-radius: 16px;
                 border-bottom-right-radius: 16px;
-                box-shadow: 3px #000;
+                background-color: rgba(255,255,255,0.1) !important;
+                -webkit-backdrop-filter: blur(15px);
+                backdrop-filter: blur(15px);
             }
         }
         a#imgCreator {

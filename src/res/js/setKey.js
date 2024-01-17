@@ -1,11 +1,8 @@
-if (localStorage.getItem("lastFetch")) {
-    document.getElementById("background").style.background = "transparent";
-    document.getElementById("root").style.background = "rgba(255,255,255,0.05)";
-    document.getElementById("root").style.backdropFilter = "blur(15px)";
-    document.body.style.background = "transparent";
-}
-
 window.onload = () => {
+    if (window.location == window.parent.location) {
+        document.body.style.backgroundImage = "url('res/background.png')";
+        document.getElementById("root").style.backgroundColor = "rgba(44, 44, 44, 0.25) !important";
+    }
     if (localStorage.getItem("unsplashApiKey")) {
         document.getElementById("setKeyBox").value =
             localStorage.getItem("unsplashApiKey");
@@ -27,11 +24,12 @@ document.body.addEventListener("keydown", (e) => {
             if (document.getElementsByClassName("hide")[0]) {
                 location.href = "index.html"
             }
-        } else {
-            alert(`Must be a 43 character Unsplash access key.`);
         }
+    } else {
+        alert(`Must be a 43 character Unsplash access key.`);
     }
-});
+}
+);
 document.getElementsByClassName("settings")[0].addEventListener("click", () => {
     parent.document.getElementById("settingsPanelContainer").style.display = "none"
     parent.document.getElementsByClassName("options")[0].style.display = "block";

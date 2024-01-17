@@ -1,10 +1,5 @@
-document.getElementById("background").style.background = "transparent";
-document.getElementById("root").style.background = "rgba(255,255,255,0.05)";
-document.getElementById("root").style.backdropFilter = "blur(15px)";
-document.body.style.background = "transparent";
-
 window.onload = () => {
-    document.getElementById("setQueryBox").value = localStorage.getItem("unsplashApiQuery").replace("&query=","");
+    document.getElementById("setQueryBox").value = localStorage.getItem("unsplashApiQuery").replace("&query=", "");
 };
 
 
