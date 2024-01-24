@@ -27,7 +27,7 @@ jobs:
           name: ecsta-firefox.zip
           path: dist/ecsta-firefox.zip
           
-      - name: WebExtPublish: Firefox
+      - name: WebExtPublish Firefox
         uses: maoserr/firefox_extension_publish@v1.0.4
         with:
           # Extension ID.
