@@ -24,9 +24,9 @@ document.body.addEventListener("keydown", (e) => {
             if (document.getElementsByClassName("hide")[0]) {
                 location.href = "index.html"
             }
+        } else {
+            alert(`Must be a 43 character Unsplash access key.`);
         }
-    } else {
-        alert(`Must be a 43 character Unsplash access key.`);
     }
 }
 );
