@@ -58,5 +58,6 @@ With Python installed, run `build.py` in your terminal with the argument of what
 
 Chromium: `python3 build.py crx`    
 Firefox: `python3 build.py xpi` 
+Both: `python3 build.py both` 
 
 > *This has only been tested with Python 3 on Windows*

@@ -18,11 +18,8 @@ jobs:
           python-version: 3.10.11
           architecture: x64
 
-      - name: Build and pack for Firefox
-        run: python3 build.py xpi
-        
-      - name: Build and pack for Chromium
-        run: python3 build.py crx
+      - name: Build and pack
+        run: python3 build.py both
         
       - name: Upload Firefox Artifact
         uses: actions/upload-artifact@v2
