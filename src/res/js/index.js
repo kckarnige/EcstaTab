@@ -8,11 +8,11 @@ if (UNSPLASH_API_KEY) {
   function set(fetched) {
     localStorage.setItem("fetchedBgImg", fetched.urls.small + "");
     localStorage.setItem("unsplashApiCreditName", fetched.user.name + "");
-    localStorage.setItem("unsplashApiCreditLink", fetched.user.links.html + "");
+    localStorage.setItem("unsplashApiCreditLink", fetched.links.html + "");
     document.getElementById("background").style.backgroundImage = `url(${fetched.urls.small})`;
     if (document.getElementById("imgCreator")) {
       document.getElementById("imgCreator").innerText = ("Image by " + fetched.user.name);
-      document.getElementById("imgCreator").setAttribute("href", fetched.user.links.html);
+      document.getElementById("imgCreator").setAttribute("href", fetched.links.html);
     }
     console.log("Using fetched image");
     console.log(fetched.urls.small);
