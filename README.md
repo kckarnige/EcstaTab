@@ -11,14 +11,13 @@
 ### What is this?
 A very simple new tab page extension meant to stay out of your way while still being a pleasant distraction for those who need something to look at while they think.
 
-### Can I *change* what I look at?
-As of now the only setting available is exactly that.   
-It can be found by clicking the gear icon in the corner.
+### Can I change the types of backgrounds I look at?
+You can, just hit the reload button and you should get a new image!    
+Don't wanna see the beaches and oceans anymore? You can go to the settings side panel and change the search query!
 
 ## Installation
 
 [![firefox](https://blog.mozilla.org/addons/files/2015/11/get-the-addon.png)](https://addons.mozilla.org/en-US/firefox/addon/ecstatab/)
-
 [![chromium](https://storage.googleapis.com/web-dev-uploads/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/UV4C4ybeBTsZt43U4xis.png)](https://chromewebstore.google.com/detail/ecsta/jpdnfbcjclmhlebikidldibdlgjindpl)
 
 ### Installation from Source
