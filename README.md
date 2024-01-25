@@ -59,4 +59,4 @@ Chromium: `python3 build.py crx`
 Firefox: `python3 build.py xpi`    
 Both: `python3 build.py both` 
 
-> *This has only been tested with Python 3 on Windows*
+> *This has only been tested with Python 3.10.11 on Windows*
