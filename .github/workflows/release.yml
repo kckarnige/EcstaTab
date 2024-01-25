@@ -73,7 +73,7 @@ jobs:
           name: Ecsta - Test build ${{ github.sha }}
           draft: false
           prerelease: true
-          body_path: .github/release.md
+          body_path: .github/test_release.md
           files: |
             release/ecsta-chromium.zip
             release/ecsta-firefox.zip

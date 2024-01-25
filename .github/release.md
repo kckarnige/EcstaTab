@@ -1,5 +1,5 @@
-<h1 align="center">!!! Important Warning !!!</h1>
+<h1 align="center">Local Install Build</h1>
 <br>
 
-<p align="center">This build is primarily for testing, <i><b>here be dragons!</b></i></p>
+<p align="center">For those who can't build it themselves for one reason or another, here you go!</p>
 <h1></h1>
