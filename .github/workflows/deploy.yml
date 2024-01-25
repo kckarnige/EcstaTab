@@ -1,4 +1,4 @@
-name: Test Release
+name: Publish
 on:
   workflow_dispatch
 
@@ -26,7 +26,7 @@ jobs:
         with:
           name: ecsta-firefox.zip
           path: dist/ecsta-firefox.zip
-          
+
       - name: Upload Chromium Artifact
         uses: actions/upload-artifact@v2
         with:
@@ -60,7 +60,7 @@ jobs:
       - uses: dev-drprasad/delete-tag-and-release@v0.2.1
         with:
           delete_release: true
-          tag_name: devbuild
+          tag_name: ${{steps.version.outputs.prop}} 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -69,11 +69,52 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: devbuild
-          name: Ecsta - Test build ${{ github.sha }}
+          tag_name: ${{steps.version.outputs.prop}} 
+          name: Ecsta - Build ${{steps.version.outputs.prop}} 
           draft: false
-          prerelease: true
+          prerelease: false
           body_path: .github/release.md
           files: |
             release/ecsta-chromium.zip
             release/ecsta-firefox.zip
+  upload-xpi:
+    name: Upload to Mozilla Store
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: ecsta-firefox.zip
+          path: release
+
+      - uses: maoserr/firefox_extension_publish@v1.0.4
+        with:
+          # Extension ID.
+          firefox_extension_id: Ecsta@kckarnige.github.io
+          # API key from Mozilla
+          api_key: ${{ secrets.JWT_ISSUER }}
+          # API secret from Mozilla
+          api_secret: ${{ secrets.JWT_SECRET }}
+          # Zip file for firefox extension
+          file: release/ecsta-firefox.zip
+
+  upload-crx:
+    name: Upload to Chrome Web Store
+    runs-on: ubuntu-latest
+    env:
+      EXTENSION_ID: jpdnfbcjclmhlebikidldibdlgjindpl
+    needs: [build]
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: ecsta-chromium.zip
+          path: release
+
+      - uses: maoserr/chrome_extension_publish@v1.0.3
+        with:
+          chrome_extension_id: eopjnahefjhnhfanplcjpbbdkpbagikk
+          client_id: ${{ secrets.CI_GOOGLE_CLIENT_ID }}
+          refresh_token: ${{ secrets.CI_GOOGLE_REFRESH_TOKEN }}
+          client_secret: ${{ secrets.CI_GOOGLE_CLIENT_SECRET }}
+          publish: true
+          file: release/ecsta-chromium.zip
