@@ -1,5 +1,6 @@
 window.onload = () => {
     document.getElementById("setQueryBox").value = localStorage.getItem("unsplashApiQuery").replace("&query=", "");
+    document.getElementById("setKeyBox").value = localStorage.getItem("unsplashApiKey");
 };
 
 
@@ -15,6 +16,18 @@ document.getElementById("resetQuery").addEventListener("click", () => {
     localStorage.removeItem("lastFetchDate");
     document.getElementById("setQueryBox").value = "";
     parent.location.reload();
+})
+document.getElementById("saveKey").addEventListener("click", () => {
+    if (document.getElementById("setKeyBox").value.length == 43) {
+        localStorage.setItem(
+            "unsplashApiKey",
+            document.getElementById("setKeyBox").value
+        );
+        alert(`Successfully set!`);
+        parent.location.reload();
+    } else {
+        alert(`Must be a 43 character Unsplash access key.`);
+    }
 })
 document.getElementsByClassName("settings")[0].addEventListener("click", () => {
     parent.document.getElementById("settingsPanelContainer").style.display = "none"

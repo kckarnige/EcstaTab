@@ -12,22 +12,28 @@
             background-color: transparent !important;
         }
     </style>
-    <link rel="shortcut icon" href="res/icons/icon.ico" />
   </head>
   <body>
     <div id="root">
         <div id="cornerButtonContainer">
             <a id="cornerButton" class="settings" title="Close Settings">Close Settings</a>
-            <a id="cornerButton" class="key" href="setKey.html" title="Access Key">Key</a>
         </div>
         <div id="setContainer">
             <div id="setInfo">
-                <h1>Change Query</h1>
-                <p>Sets the query used to grab the background.</p>
+                <h2>Change Query</h2>
+                <p>Sets the query used to grab backgrounds.</p>
                 <input id="setQueryBox" maxlength="43" placeholder="Set Query" />
             </div>
             <button id="resetQuery">Reset</button>
             <button id="saveSettings">Save</button>
+        </div>
+        <div id="setContainer">
+            <div id="setInfo">
+                <h2>Change API Key</h2>
+                <p>Changes the Access Key used to grab backgrounds.</p>
+                <input id="setKeyBox" maxlength="43" placeholder="Access Key" />
+            </div>
+            <button id="saveKey">Save</button>
         </div>
     </div>
     <script src="res/js/config.js"></script>
