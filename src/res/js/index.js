@@ -65,13 +65,18 @@ if (UNSPLASH_API_KEY) {
           document.getElementById("imgCreator").innerText = ("Image by " + localStorage.getItem("unsplashApiCreditName"));
           document.getElementById("imgCreator").setAttribute("href", localStorage.getItem("unsplashApiCreditLink"));
         }
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.getElementById("tabIcon").setAttribute("href","res/icons/white-256.png")
+        } else {
+          document.getElementById("tabIcon").setAttribute("href","res/icons/black-256.png")
+        }
         console.log(
           `Hasn't been 3 minutes (Has only been ${(
             Date.now() / 60000 -
             getLastFetch / 60000
           ).toFixed(1)}), nor has a full day passed (failsafe solution)`
         );
-        console.log("Using cached image");
+        console.log("Using stored image");
         console.log(localStorage.getItem("lastFetch"));
         console.log(localStorage.getItem("lastFetchDate"));
         console.log(localStorage.getItem("fetchedBgImg"));

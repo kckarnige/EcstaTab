@@ -9,6 +9,12 @@ body {
      -moz-user-select: none;
           user-select: none;
 }
+@media (prefers-color-scheme: light) {
+  body {
+    color: #000;
+    background-color: rgb(255, 255, 255);
+  }
+}
 body div#background {
   margin: 0;
   height: 100vh;
@@ -29,12 +35,22 @@ body div#root {
   backdrop-filter: blur(15px);
 }
 body div#root a[href] {
-  color: white;
+  color: #fff;
   transition: 0.1s ease-out;
 }
+@media (prefers-color-scheme: light) {
+  body div#root a[href] {
+    color: #000;
+  }
+}
 body div#root a[href]:hover {
-  opacity: 0.75;
+  opacity: 0.7;
   transition: 0.1s ease-out;
+}
+@media (prefers-color-scheme: light) {
+  body div#root {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
 }
 body div#root input {
   font-size: 14px;
@@ -115,6 +131,11 @@ body div#root div#cornerButtonContainer a#cornerButton.settings {
   background-color: currentColor;
   color: #fff;
 }
+@media (prefers-color-scheme: light) {
+  body div#root div#cornerButtonContainer a#cornerButton.settings {
+    color: #000;
+  }
+}
 body div#root div#cornerButtonContainer a#cornerButton.config {
   content: url("../space.svg");
   -webkit-mask-image: url("../config.svg");
@@ -128,6 +149,11 @@ body div#root div#cornerButtonContainer a#cornerButton.config {
   background-repeat: no-repeat;
   background-color: currentColor;
   color: #fff;
+}
+@media (prefers-color-scheme: light) {
+  body div#root div#cornerButtonContainer a#cornerButton.config {
+    color: #000;
+  }
 }
 body div#root div#cornerButtonContainer a#cornerButton.home {
   position: absolute;
@@ -146,6 +172,11 @@ body div#root div#cornerButtonContainer a#cornerButton.home {
   background-color: currentColor;
   color: #fff;
 }
+@media (prefers-color-scheme: light) {
+  body div#root div#cornerButtonContainer a#cornerButton.home {
+    color: #000;
+  }
+}
 body div#root div#cornerButtonContainer a#cornerButton.gh {
   content: url("../space.svg");
   -webkit-mask-image: url("../github.svg");
@@ -160,6 +191,11 @@ body div#root div#cornerButtonContainer a#cornerButton.gh {
   background-color: currentColor;
   color: #fff;
 }
+@media (prefers-color-scheme: light) {
+  body div#root div#cornerButtonContainer a#cornerButton.gh {
+    color: #000;
+  }
+}
 body div#root div#cornerButtonContainer a#cornerButton.ko-fi {
   content: url("../space.svg");
   -webkit-mask-image: url("../kofi.svg");
@@ -173,6 +209,11 @@ body div#root div#cornerButtonContainer a#cornerButton.ko-fi {
   background-repeat: no-repeat;
   background-color: currentColor;
   color: #fff;
+}
+@media (prefers-color-scheme: light) {
+  body div#root div#cornerButtonContainer a#cornerButton.ko-fi {
+    color: #000;
+  }
 }
 body div#root div#cornerButtonContainer a#cornerButton.ko-fi:hover {
   color: #ff5e5b;
@@ -191,6 +232,11 @@ body div#root div#cornerButtonContainer a#cornerButton.reload {
   background-color: currentColor;
   color: #fff;
 }
+@media (prefers-color-scheme: light) {
+  body div#root div#cornerButtonContainer a#cornerButton.reload {
+    color: #000;
+  }
+}
 body div#root div#cornerButtonContainer a#cornerButton.key {
   content: url("../space.svg");
   -webkit-mask-image: url("../key.svg");
@@ -204,6 +250,11 @@ body div#root div#cornerButtonContainer a#cornerButton.key {
   background-repeat: no-repeat;
   background-color: currentColor;
   color: #fff;
+}
+@media (prefers-color-scheme: light) {
+  body div#root div#cornerButtonContainer a#cornerButton.key {
+    color: #000;
+  }
 }
 body div#root div#cornerButtonContainer a#cornerButton:hover {
   transition: 0.2s;
@@ -240,7 +291,7 @@ body div#root a#imgCreator {
   text-decoration: none;
 }
 body div#root a#imgCreator:hover {
-  opacity: 0.4;
+  opacity: 0.7;
 }
 body div#root div#timeContainer {
   float: right;
@@ -248,11 +299,17 @@ body div#root div#timeContainer {
   font-size: 48px;
   margin-top: 8px;
   margin-right: 12px;
+  opacity: 0.5;
+}
+@media (prefers-color-scheme: light) {
+  body div#root div#timeContainer {
+    color: #000;
+  }
 }
 body div#root div#timeContainer span#time-sec {
   font-family: "Consolas";
   font-size: 24px;
-  opacity: 0.5;
+  opacity: 0.25;
 }
 body div#root .hide {
   display: none !important;

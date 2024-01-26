@@ -17,6 +17,16 @@ document.getElementById("resetQuery").addEventListener("click", () => {
     document.getElementById("setQueryBox").value = "";
     parent.location.reload();
 })
+document.getElementById("hardReset").addEventListener("click", () => {
+    if (confirm("Only use this as a last resort, try hitting the reload button first!" + `
+` +"Are you sure you wanna do this?")) {
+        localStorage.removeItem("unsplashApiQuery");
+        localStorage.removeItem("lastFetch");
+        localStorage.removeItem("lastFetchDate");
+        localStorage.removeItem("unsplashApiKey");
+        parent.location.reload();
+      }
+})
 document.getElementById("saveKey").addEventListener("click", () => {
     if (document.getElementById("setKeyBox").value.length == 43) {
         localStorage.setItem(
