@@ -4,8 +4,7 @@
 <p align="center">For those who can't build it themselves for one reason or another, here you go!</p>
 <h1></h1>
 
-[![firefox](https://blog.mozilla.org/addons/files/2015/11/get-the-addon.png)](https://addons.mozilla.org/en-US/firefox/addon/ecstatab/)
-[![chromium](https://storage.googleapis.com/web-dev-uploads/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/UV4C4ybeBTsZt43U4xis.png)](https://chromewebstore.google.com/detail/ecsta/jpdnfbcjclmhlebikidldibdlgjindpl)
+[![firefox](https://blog.mozilla.org/addons/files/2015/11/get-the-addon.png)](https://addons.mozilla.org/en-US/firefox/addon/ecstatab/) [![chromium](https://storage.googleapis.com/web-dev-uploads/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/UV4C4ybeBTsZt43U4xis.png)](https://chromewebstore.google.com/detail/ecsta/jpdnfbcjclmhlebikidldibdlgjindpl)
 
 ### Installation
 <details>
