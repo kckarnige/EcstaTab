@@ -1,1 +1,1 @@
-No user information is collected in any capacity, it it shall remain that way.
+No user information is collected in any capacity, and it shall remain that way.

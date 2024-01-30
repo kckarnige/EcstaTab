@@ -3,6 +3,13 @@ const getLastFetchDate = localStorage.getItem("lastFetchDate");
 const UNSPLASH_API_KEY = localStorage.getItem("unsplashApiKey");
 var currentDate = new Date().toISOString().split("T")[0];
 
+window.onload = () => {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.getElementById("tabIcon").setAttribute("href","res/icons/white-256.png")
+  } else {
+    document.getElementById("tabIcon").setAttribute("href","res/icons/black-256.png")
+  }
+}
 if (UNSPLASH_API_KEY) {
   //Background code
   function set(fetched) {
@@ -64,11 +71,6 @@ if (UNSPLASH_API_KEY) {
         if (document.getElementById("imgCreator")) {
           document.getElementById("imgCreator").innerText = ("Image by " + localStorage.getItem("unsplashApiCreditName"));
           document.getElementById("imgCreator").setAttribute("href", localStorage.getItem("unsplashApiCreditLink"));
-        }
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.getElementById("tabIcon").setAttribute("href","res/icons/white-256.png")
-        } else {
-          document.getElementById("tabIcon").setAttribute("href","res/icons/black-256.png")
         }
         console.log(
           `Hasn't been 3 minutes (Has only been ${(

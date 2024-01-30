@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Ecsta",
     "short_name": "Ecsta",
-    "version": "0.3.3",
+    "version": "0.3.4",
   
     "description": "A simple new tab extension meant to stay out of your way while still making for great eye-candy.",
 
