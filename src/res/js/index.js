@@ -1,15 +1,16 @@
-const getLastFetch = localStorage.getItem("lastFetch");
+const getLastFetch = localStorage.getItem("lastFetch") / 60000;
 const getLastFetchDate = localStorage.getItem("lastFetchDate");
 const UNSPLASH_API_KEY = localStorage.getItem("unsplashApiKey");
 var currentDate = new Date().toISOString().split("T")[0];
 
 if (UNSPLASH_API_KEY) {
-  //Background code
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.getElementById("tabIcon").setAttribute("href","res/icons/white-256.png")
-    } else {
-      document.getElementById("tabIcon").setAttribute("href","res/icons/black-256.png")
-    }
+  //Tab Icon
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.getElementById("tabIcon").setAttribute("href", "res/icons/white-256.png")
+  } else {
+    document.getElementById("tabIcon").setAttribute("href", "res/icons/black-256.png")
+  }
+  //Background Code
   function set(fetched) {
     localStorage.setItem("fetchedBgImg", fetched.urls.small + "");
     localStorage.setItem("unsplashApiCreditName", fetched.user.name + "");
@@ -26,10 +27,7 @@ if (UNSPLASH_API_KEY) {
   }
   function getAndSet() {
     localStorage.setItem("lastFetch", Date.now());
-    localStorage.setItem(
-      "lastFetchDate",
-      new Date().toISOString().split("T")[0]
-    );
+    localStorage.setItem("lastFetchDate", new Date().toISOString().split("T")[0]);
     if (document.getElementById("root")) {
       fetch(
         `https://api.unsplash.com/photos/random/?orientation=landscape${localStorage.getItem("unsplashApiQuery")}`,
@@ -59,11 +57,7 @@ if (UNSPLASH_API_KEY) {
   }
 
   if (getLastFetch && getLastFetchDate) {
-    if (
-      getLastFetch / 60000 >= Date.now() / 60000 - 3 ||
-      getLastFetchDate != currentDate ||
-      localStorage.getItem("fetchedBgImg") == undefined
-    ) {
+    if (getLastFetch >= Date.now() / 60000 - 3 || getLastFetchDate != currentDate || localStorage.getItem("fetchedBgImg") == undefined) {
       window.onload = () => {
         document.getElementById("background").style.backgroundImage = `url(${localStorage.getItem("fetchedBgImg")})`;
         if (document.getElementById("imgCreator")) {
@@ -71,10 +65,7 @@ if (UNSPLASH_API_KEY) {
           document.getElementById("imgCreator").setAttribute("href", localStorage.getItem("unsplashApiCreditLink"));
         }
         console.log(
-          `Hasn't been 3 minutes (Has only been ${(
-            Date.now() / 60000 -
-            getLastFetch / 60000
-          ).toFixed(1)}), nor has a full day passed (failsafe solution)`
+          `Hasn't been 3 minutes (Has only been ${(Date.now() / 60000 - getLastFetch).toFixed(1)}), nor has a full day passed (failsafe solution)`
         );
         console.log("Using stored image");
         console.log(localStorage.getItem("lastFetch"));
@@ -96,9 +87,7 @@ if (UNSPLASH_API_KEY) {
         timeStyle: "short",
         hour12: true,
       });
-      document.getElementById("time-sec").textContent = (
-        "0" + d.getSeconds()
-      ).slice(-2);
+      document.getElementById("time-sec").textContent = ("0" + d.getSeconds()).slice(-2);
     }
     time();
     setInterval(time, 1000);
@@ -117,7 +106,17 @@ if (document.getElementsByClassName("reload")[0]) {
   });
 }
 
+//Settings Panel
+var silly = false;
 document.getElementsByClassName("settings")[0].addEventListener("click", () => {
   document.getElementById("settingsPanelContainer").style.display = "block"
   document.getElementsByClassName("options")[0].style.display = "none";
+  setTimeout(() => { silly = true }, 10)
+})
+document.getElementById("root").addEventListener("click", () => {
+  if (silly == true) {
+    document.getElementById("settingsPanelContainer").style.display = "none"
+    document.getElementsByClassName("options")[0].style.display = "block";
+    setTimeout(() => { silly = false }, 10)
+  }
 })
