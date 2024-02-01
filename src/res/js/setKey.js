@@ -8,7 +8,7 @@ window.onload = () => {
             localStorage.getItem("unsplashApiKey");
     }
     if (!localStorage.getItem("unsplashApiQuery")) {
-        localStorage.setItem("unsplashApiQuery", "&query=sea island")
+        localStorage.setItem("unsplashApiQuery", "&query=ocean")
     }
 };
 document.getElementById("saveKey").addEventListener("click", () => {
