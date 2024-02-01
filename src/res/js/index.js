@@ -3,15 +3,13 @@ const getLastFetchDate = localStorage.getItem("lastFetchDate");
 const UNSPLASH_API_KEY = localStorage.getItem("unsplashApiKey");
 var currentDate = new Date().toISOString().split("T")[0];
 
-window.onload = () => {
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.getElementById("tabIcon").setAttribute("href","res/icons/white-256.png")
-  } else {
-    document.getElementById("tabIcon").setAttribute("href","res/icons/black-256.png")
-  }
-}
 if (UNSPLASH_API_KEY) {
   //Background code
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.getElementById("tabIcon").setAttribute("href","res/icons/white-256.png")
+    } else {
+      document.getElementById("tabIcon").setAttribute("href","res/icons/black-256.png")
+    }
   function set(fetched) {
     localStorage.setItem("fetchedBgImg", fetched.urls.small + "");
     localStorage.setItem("unsplashApiCreditName", fetched.user.name + "");
