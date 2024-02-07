@@ -10,7 +10,7 @@ if (UNSPLASH_API_KEY) {
   } else {
     document.getElementById("tabIcon").setAttribute("href", "res/icons/black-256.png")
   }
-  //Background Code
+  //Background Fetch Code
   function set(fetched) {
     localStorage.setItem("fetchedBgImg", fetched.urls.small + "");
     localStorage.setItem("unsplashApiCreditName", fetched.user.name + "");
@@ -56,8 +56,9 @@ if (UNSPLASH_API_KEY) {
     }
   }
 
+  //Background Refresh
   if (getLastFetch && getLastFetchDate) {
-    if (getLastFetch >= Date.now() / 60000 - 3 || getLastFetchDate != currentDate || localStorage.getItem("fetchedBgImg") == undefined) {
+    if ((getLastFetch > Date.now() / 60000 - 3) || (getLastFetchDate != currentDate) || (localStorage.getItem("fetchedBgImg") == undefined)) {
       window.onload = () => {
         document.getElementById("background").style.backgroundImage = `url(${localStorage.getItem("fetchedBgImg")})`;
         if (document.getElementById("imgCreator")) {
