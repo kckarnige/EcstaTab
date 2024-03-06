@@ -1,6 +1,6 @@
 window.onload = () => {
     if (window.location == window.parent.location) {
-        document.body.style.backgroundImage = "url('res/background.png')";
+        document.body.style.backgroundImage = "url('res/background.jpg')";
         document.getElementById("root").style.backgroundColor = "rgba(44, 44, 44, 0.25) !important";
     }
     if (localStorage.getItem("unsplashApiKey")) {

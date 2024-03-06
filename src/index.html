@@ -10,7 +10,7 @@
     <div id="background"></div>
     <div id="root">
         <div id="cornerButtonContainer" class="options">
-            <a id="cornerButton" class="settings" title="Open Settings">Open Settings</a>
+            <a id="cornerButton" class="settings setOpen" title="Open Settings">Open Settings</a>
             <a id="cornerButton" class="reload" title="Reroll background">Reroll</a>
         </div>
         <div id="timeContainer">
@@ -25,12 +25,41 @@
             <a id="cornerButton" class="ko-fi" href="https://ko-fi.com/kckarnige" title="Buy me a Ko-fi!" target="_blank">Ko-fi</a>
         </div>
         <div id="settingsPanelContainer">
-            <iframe id="settingsPanel" src="config.html" allowtransparency="true">Looks like the iFrame couldn't load :/</iframe>
+            <div id="settingsPanel">
+                <div id="cornerButtonContainer">
+                    <a id="cornerButton" class="settings setClose" title="Close Settings">Close Settings</a>
+                </div>
+                <div id="setContainer" style="padding-top: 24px;">
+                    <div id="setInfo">
+                        <h2>Change Query</h2>
+                        <p>Sets the query used to grab backgrounds.</p>
+                        <input id="setQueryBox" maxlength="43" placeholder="Set Query" />
+                    </div>
+                    <button id="resetQuery">Reset</button>
+                    <button id="saveSettings">Save</button>
+                </div>
+                <div id="setContainer">
+                    <div id="setInfo">
+                        <h2>Change API Key</h2>
+                        <p>Changes the Access Key used to grab backgrounds.</p>
+                        <input id="setKeyBox" maxlength="43" placeholder="Access Key" />
+                    </div>
+                    <button id="saveKey">Save</button>
+                </div>
+                <div id="setContainer">
+                    <div id="setInfo">
+                        <h2>Emergency Reset</h2>
+                        <p>Clears all locally stored variables, including your API key.</p>
+                    </div>
+                    <button id="hardReset">Hard Reset</button>
+                </div>
+            </div>
             <div id="cornerButtonContainer">
                 <a id="cornerButton" class="home" href="index.html">Back</a>
             </div>
         </div>
     </div>
+    <script src="res/js/config.js"></script>
     <script src="res/js/index.js"></script>
   </body>
 </html>

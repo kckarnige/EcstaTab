@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
   font-size: 16px;
   margin: 0;
@@ -8,12 +12,6 @@ body {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-}
-@media (prefers-color-scheme: light) {
-  body {
-    color: #000;
-    background-color: rgb(255, 255, 255);
-  }
 }
 body div#background {
   margin: 0;
@@ -30,7 +28,7 @@ body div#root {
   margin: 0;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(44, 44, 44, 0.25);
+  background-color: rgba(75, 75, 75, 0.25);
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
 }
@@ -38,19 +36,9 @@ body div#root a[href] {
   color: #fff;
   transition: 0.1s ease-out;
 }
-@media (prefers-color-scheme: light) {
-  body div#root a[href] {
-    color: #000;
-  }
-}
 body div#root a[href]:hover {
   opacity: 0.7;
   transition: 0.1s ease-out;
-}
-@media (prefers-color-scheme: light) {
-  body div#root {
-    background-color: rgba(255, 255, 255, 0.25);
-  }
 }
 body div#root input {
   font-size: 14px;
@@ -131,11 +119,6 @@ body div#root div#cornerButtonContainer a#cornerButton.settings {
   background-color: currentColor;
   color: #fff;
 }
-@media (prefers-color-scheme: light) {
-  body div#root div#cornerButtonContainer a#cornerButton.settings {
-    color: #000;
-  }
-}
 body div#root div#cornerButtonContainer a#cornerButton.config {
   content: url("../space.svg");
   -webkit-mask-image: url("../config.svg");
@@ -149,11 +132,6 @@ body div#root div#cornerButtonContainer a#cornerButton.config {
   background-repeat: no-repeat;
   background-color: currentColor;
   color: #fff;
-}
-@media (prefers-color-scheme: light) {
-  body div#root div#cornerButtonContainer a#cornerButton.config {
-    color: #000;
-  }
 }
 body div#root div#cornerButtonContainer a#cornerButton.home {
   position: absolute;
@@ -172,11 +150,6 @@ body div#root div#cornerButtonContainer a#cornerButton.home {
   background-color: currentColor;
   color: #fff;
 }
-@media (prefers-color-scheme: light) {
-  body div#root div#cornerButtonContainer a#cornerButton.home {
-    color: #000;
-  }
-}
 body div#root div#cornerButtonContainer a#cornerButton.gh {
   content: url("../space.svg");
   -webkit-mask-image: url("../github.svg");
@@ -191,11 +164,6 @@ body div#root div#cornerButtonContainer a#cornerButton.gh {
   background-color: currentColor;
   color: #fff;
 }
-@media (prefers-color-scheme: light) {
-  body div#root div#cornerButtonContainer a#cornerButton.gh {
-    color: #000;
-  }
-}
 body div#root div#cornerButtonContainer a#cornerButton.ko-fi {
   content: url("../space.svg");
   -webkit-mask-image: url("../kofi.svg");
@@ -209,11 +177,6 @@ body div#root div#cornerButtonContainer a#cornerButton.ko-fi {
   background-repeat: no-repeat;
   background-color: currentColor;
   color: #fff;
-}
-@media (prefers-color-scheme: light) {
-  body div#root div#cornerButtonContainer a#cornerButton.ko-fi {
-    color: #000;
-  }
 }
 body div#root div#cornerButtonContainer a#cornerButton.ko-fi:hover {
   color: #ff5e5b;
@@ -232,11 +195,6 @@ body div#root div#cornerButtonContainer a#cornerButton.reload {
   background-color: currentColor;
   color: #fff;
 }
-@media (prefers-color-scheme: light) {
-  body div#root div#cornerButtonContainer a#cornerButton.reload {
-    color: #000;
-  }
-}
 body div#root div#cornerButtonContainer a#cornerButton.key {
   content: url("../space.svg");
   -webkit-mask-image: url("../key.svg");
@@ -251,11 +209,6 @@ body div#root div#cornerButtonContainer a#cornerButton.key {
   background-color: currentColor;
   color: #fff;
 }
-@media (prefers-color-scheme: light) {
-  body div#root div#cornerButtonContainer a#cornerButton.key {
-    color: #000;
-  }
-}
 body div#root div#cornerButtonContainer a#cornerButton:hover {
   transition: 0.2s;
   opacity: 0.7;
@@ -268,7 +221,7 @@ body div#root div#settingsPanelContainer {
   position: absolute;
   background-color: transparent !important;
 }
-body div#root div#settingsPanelContainer iframe#settingsPanel {
+body div#root div#settingsPanelContainer div#settingsPanel {
   margin: 0;
   border: none;
   left: 0;
@@ -299,16 +252,11 @@ body div#root div#timeContainer {
   font-size: 48px;
   margin-top: 8px;
   margin-right: 12px;
-}
-@media (prefers-color-scheme: light) {
-  body div#root div#timeContainer {
-    color: #000;
-  }
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
 }
 body div#root div#timeContainer span#time-sec {
   font-family: "Consolas";
   font-size: 24px;
-  opacity: 0.25;
 }
 body div#root .hide {
   display: none !important;

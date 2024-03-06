@@ -10,9 +10,10 @@ if (UNSPLASH_API_KEY) {
   } else {
     document.getElementById("tabIcon").setAttribute("href", "res/icons/black-256.png")
   }
+
   //Background Fetch Code
   function set(fetched) {
-    localStorage.setItem("fetchedBgImg", fetched.urls.small + "");
+    localStorage.setItem("fetchedBgImgURL", fetched.urls.small + "");
     localStorage.setItem("unsplashApiCreditName", fetched.user.name + "");
     localStorage.setItem("unsplashApiCreditLink", fetched.links.html + "");
     document.getElementById("background").style.backgroundImage = `url(${fetched.urls.small})`;
@@ -20,8 +21,25 @@ if (UNSPLASH_API_KEY) {
       document.getElementById("imgCreator").innerText = ("Image by " + fetched.user.name);
       document.getElementById("imgCreator").setAttribute("href", fetched.links.html);
     }
+    
     console.log("Using fetched image");
-    console.log(fetched.urls.small);
+    console.log("Image URL: " + fetched.urls.small);
+    //Turn image background into Base64 data URI
+    fetch(fetched.urls.small)
+      .then(response => response.blob())
+      .then(blob => new Promise((resolve, reject) => {
+        const reader = new FileReader()
+        reader.onloadend = () => resolve(reader.result)
+        reader.onerror = reject
+        reader.readAsDataURL(blob)
+        
+      })
+      .then(dataUrl => {
+        console.log("Image Data: " + dataUrl);
+        localStorage.setItem("fetchedBgImg", dataUrl + "");
+      }))
+      
+    //Everything else
     console.log(getLastFetch);
     console.log(getLastFetchDate);
   }
@@ -41,8 +59,8 @@ if (UNSPLASH_API_KEY) {
         .then((response) => {
           if (response.ok) {
             return response.json();
-          } else if (localStorage.getItem("fetchedBgImg") && window.navigator.onLine) {
-            throw new Error("Couldn't fetch new image, you may need to update your key. Reusing last image.");
+          } else if (localStorage.getItem("fetchedBgImgURL") && window.navigator.onLine) {
+            throw new Error("Couldn't fetch new image, you may need to update your key. Reusing stored image.");
           } else if (window.navigator.onLine) {
             throw new Error("Couldn't fetch new image, you may need to update your key.");
           } else {
@@ -71,7 +89,7 @@ if (UNSPLASH_API_KEY) {
         console.log("Using stored image");
         console.log(localStorage.getItem("lastFetch"));
         console.log(localStorage.getItem("lastFetchDate"));
-        console.log(localStorage.getItem("fetchedBgImg"));
+        console.log("Image URL: " + localStorage.getItem("fetchedBgImgURL"));
       };
     } else {
       getAndSet();
@@ -108,16 +126,11 @@ if (document.getElementsByClassName("reload")[0]) {
 }
 
 //Settings Panel
-var silly = false;
-document.getElementsByClassName("settings")[0].addEventListener("click", () => {
+document.getElementsByClassName("setOpen")[0].addEventListener("click", () => {
   document.getElementById("settingsPanelContainer").style.display = "block"
   document.getElementsByClassName("options")[0].style.display = "none";
-  setTimeout(() => { silly = true }, 10)
 })
-document.getElementById("root").addEventListener("click", () => {
-  if (silly == true) {
-    document.getElementById("settingsPanelContainer").style.display = "none"
-    document.getElementsByClassName("options")[0].style.display = "block";
-    setTimeout(() => { silly = false }, 10)
-  }
+document.getElementsByClassName("setClose")[0].addEventListener("click", () => {
+  document.getElementById("settingsPanelContainer").style.display = "none"
+  document.getElementsByClassName("options")[0].style.display = "block";
 })
