@@ -1,231 +1,234 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 html {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 body {
-    font-size: 16px;
+  font-size: 16px;
+  margin: 0;
+  color: #fff;
+  font-family: "Poppins";
+  background-color: rgba(0, 0, 0);
+  user-select: none;
+  div#background {
     margin: 0;
-    color: #fff;
-    font-family: "Poppins";
-    background-color: rgba(0, 0, 0);
-    user-select: none;
-    div#background {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  div#root {
+    overflow-x: hidden;
+    overflow-y: auto;
+    a[href] {
+      color: #fff;
+      transition: 0.1s ease-out;
+      &:hover {
+        opacity: 0.7;
+        transition: 0.1s ease-out;
+      }
+    }
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(75, 75, 75, 0.25);
+    backdrop-filter: blur(14px);
+    input {
+      font-size: 14px;
+      width: 344px;
+      text-align: center;
+      font-family: "Consolas";
+      display: inline-block;
+      color: white;
+      background-color: rgb(44, 44, 44);
+      border: 2px grey solid;
+      border-radius: 4px;
+      outline: none;
+    }
+    button {
+      margin-top: 12px;
+      cursor: pointer;
+      font-size: 20px;
+      width: 160px;
+      text-align: center;
+      font-family: "Consolas";
+      display: inline-block;
+      color: white;
+      background-color: rgb(44, 44, 44);
+      border: 2px grey solid;
+      border-radius: 4px;
+      outline: none;
+      &:hover {
+        color: lightgray;
+      }
+      &:active {
+        color: grey;
+        background-color: rgb(33, 33, 33);
+      }
+    }
+    div#setContainer {
+      padding-top: 72px;
+      text-align: center;
+      overflow: hidden;
+      div#setInfo {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 16px;
+        width: fit-content;
+        p {
+          text-align: left;
+          margin-bottom: 6px;
+        }
+      }
+    }
+    div#cornerButtonContainer {
+      height: 36px;
+      position: absolute;
+      overflow: hidden;
+      transition: 0.6s;
+      &.bottomCorner {
+        bottom: 0;
+      }
+      a#cornerButton {
+        position: relative;
+        margin: 8px;
+        width: 20px;
+        opacity: 0.3;
+        transition: 0.4s;
+        cursor: pointer;
+        &.settings {
+          content: url("../space.svg");
+          mask-image: url("../gear.svg");
+          mask-size: 100%;
+          mask-position: center center;
+          mask-repeat: no-repeat;
+          background-repeat: no-repeat;
+          background-color: currentColor;
+          color: #fff;
+        }
+        &.config {
+          content: url("../space.svg");
+          mask-image: url("../config.svg");
+          mask-size: 100%;
+          mask-position: center center;
+          mask-repeat: no-repeat;
+          background-repeat: no-repeat;
+          background-color: currentColor;
+          color: #fff;
+        }
+        &.home {
+          position: absolute;
+          right: 0;
+          float: right;
+          content: url("../space.svg");
+          mask-image: url("../home.svg");
+          mask-size: 100%;
+          mask-position: center center;
+          mask-repeat: no-repeat;
+          background-repeat: no-repeat;
+          background-color: currentColor;
+          color: #fff;
+        }
+        &.gh {
+          content: url("../space.svg");
+          mask-image: url("../github.svg");
+          mask-size: 100%;
+          mask-position: center center;
+          mask-repeat: no-repeat;
+          background-repeat: no-repeat;
+          background-color: currentColor;
+          color: #fff;
+        }
+        &.ko-fi {
+          content: url("../space.svg");
+          mask-image: url("../kofi.svg");
+          mask-size: 100%;
+          mask-position: center center;
+          mask-repeat: no-repeat;
+          background-repeat: no-repeat;
+          background-color: currentColor;
+          color: #fff;
+          &:hover {
+            color: #ff5e5b;
+          }
+        }
+        &.reload {
+          content: url("../space.svg");
+          mask-image: url("../reload.svg");
+          mask-size: 100%;
+          mask-position: center center;
+          mask-repeat: no-repeat;
+          background-repeat: no-repeat;
+          background-color: currentColor;
+          color: #fff;
+        }
+        &.key {
+          content: url("../space.svg");
+          mask-image: url("../key.svg");
+          mask-size: 100%;
+          mask-position: center center;
+          mask-repeat: no-repeat;
+          background-repeat: no-repeat;
+          background-color: currentColor;
+          color: #fff;
+        }
+        &:hover {
+          transition: 0.2s;
+          opacity: 0.7;
+        }
+      }
+    }
+    div#settingsPanelContainer {
+      height: 100vh;
+      width: 36vw;
+      overflow: hidden;
+      position: absolute;
+      transition: 0.5s ease-in-out;
+      transform: translateX(-100vw);
+      background-color: transparent !important;
+      &.panShow {
+        transform: translateX(0);
+      }
+      div#settingsPanel {
         margin: 0;
+        border: none;
+        left: 0;
+        float: left;
         height: 100vh;
-        width: 100vw;
+        width: 36vw;
         position: absolute;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+        background-color: rgba(255, 255, 255, 0.1) !important;
+      }
     }
-    div#root {
-        overflow-x: hidden;
-        overflow-y: auto;
-        a[href] {
-            color: #fff;
-            transition: 0.1s ease-out;
-            &:hover {
-                opacity: 0.7;
-                transition: 0.1s ease-out;
-            }
-        }
-        margin: 0;
-        height: 100vh;
-        width: 100vw;
-        background-color: rgba(75, 75, 75, 0.25);
-        -webkit-backdrop-filter: blur(15px);
-        backdrop-filter: blur(15px);
-        input {
-            font-size: 14px;
-            width: 344px;
-            text-align: center;
-            font-family: "Consolas";
-            display: inline-block;
-            color: white;
-            background-color: rgb(44, 44, 44);
-            border: 2px grey solid;
-            border-radius: 4px;
-            outline: none;
-        }
-        button {
-            margin-top: 12px;
-            cursor: pointer;
-            font-size: 20px;
-            width: 160px;
-            text-align: center;
-            font-family: "Consolas";
-            display: inline-block;
-            color: white;
-            background-color: rgb(44, 44, 44);
-            border: 2px grey solid;
-            border-radius: 4px;
-            outline: none;
-            &:hover {
-                color: lightgray;
-            }
-            &:active {
-                color: grey;
-                background-color: rgb(33, 33, 33);
-            }
-        }
-        div#setContainer {
-            padding-top: 72px;
-            text-align: center;
-            overflow: hidden;
-            div#setInfo {
-                margin-left: auto;
-                margin-right: auto;
-                font-size: 16px;
-                width: fit-content;
-                p {
-                    text-align: left;
-                    margin-bottom: 6px;
-                }
-            }
-        }
-        div#cornerButtonContainer {
-            height: 36px;
-            position: absolute;
-            overflow: hidden;
-            &.bottomCorner {
-                bottom: 0;
-            }
-            a#cornerButton {
-                position: relative;
-                margin: 8px;
-                width: 20px;
-                opacity: 0.3;
-                transition: 0.4s;
-                cursor: pointer;
-                &.settings {
-                    content: url("../space.svg");
-                    mask-image: url("../gear.svg");
-                    mask-size: 100%;
-                    mask-position: center center;
-                    mask-repeat: no-repeat;
-                    background-repeat: no-repeat;
-                    background-color: currentColor;
-                    color: #fff;
-                }
-                &.config {
-                    content: url("../space.svg");
-                    mask-image: url("../config.svg");
-                    mask-size: 100%;
-                    mask-position: center center;
-                    mask-repeat: no-repeat;
-                    background-repeat: no-repeat;
-                    background-color: currentColor;
-                    color: #fff;
-                }
-                &.home {
-                    position: absolute;
-                    right: 0;
-                    float: right;
-                    content: url("../space.svg");
-                    mask-image: url("../home.svg");
-                    mask-size: 100%;
-                    mask-position: center center;
-                    mask-repeat: no-repeat;
-                    background-repeat: no-repeat;
-                    background-color: currentColor;
-                    color: #fff;
-                }
-                &.gh {
-                    content: url("../space.svg");
-                    mask-image: url("../github.svg");
-                    mask-size: 100%;
-                    mask-position: center center;
-                    mask-repeat: no-repeat;
-                    background-repeat: no-repeat;
-                    background-color: currentColor;
-                    color: #fff;
-                }
-                &.ko-fi {
-                    content: url("../space.svg");
-                    mask-image: url("../kofi.svg");
-                    mask-size: 100%;
-                    mask-position: center center;
-                    mask-repeat: no-repeat;
-                    background-repeat: no-repeat;
-                    background-color: currentColor;
-                    color: #fff;
-                    &:hover {
-                        color: #ff5e5b
-                    }
-                }
-                &.reload {
-                    content: url("../space.svg");
-                    mask-image: url("../reload.svg");
-                    mask-size: 100%;
-                    mask-position: center center;
-                    mask-repeat: no-repeat;
-                    background-repeat: no-repeat;
-                    background-color: currentColor;
-                    color: #fff;
-                }
-                &.key {
-                    content: url("../space.svg");
-                    mask-image: url("../key.svg");
-                    mask-size: 100%;
-                    mask-position: center center;
-                    mask-repeat: no-repeat;
-                    background-repeat: no-repeat;
-                    background-color: currentColor;
-                    color: #fff;
-                }
-                &:hover {
-                    transition: 0.2s;
-                    opacity: 0.7;
-                }
-            }
-        }
-        div#settingsPanelContainer {
-            height: 100vh;
-            width: 36vw;
-            overflow: hidden;
-            display: none;
-            position: absolute;
-            background-color: transparent !important;
-            div#settingsPanel {
-                margin: 0;
-                border: none;
-                left: 0;
-                float: left;
-                height: 100vh;
-                width: 36vw;
-                position: absolute;
-                border-top-right-radius: 16px;
-                border-bottom-right-radius: 16px;
-                background-color: rgba(255,255,255,0.1) !important;
-                -webkit-backdrop-filter: blur(15px);
-                backdrop-filter: blur(15px);
-            }
-        }
-        a#imgCreator {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            margin: 8px;
-            opacity: 0.3;
-            text-decoration: none;
-            &:hover {
-                opacity: 0.7;
-            }
-        }
-        div#timeContainer {
-            float: right;
-            right: 0;
-            font-size: 48px;
-            margin-top: 8px;
-            margin-right: 12px;
-            text-shadow: 0px 0px 15px rgba(0,0,0,0.25);
-            span#time-sec {
-                font-family: "Consolas";
-                font-size: 24px;
-            }
-        }
-        .hide {
-            display: none !important;
-        }
+    a#imgCreator {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: 8px;
+      opacity: 0.3;
+      text-decoration: none;
+      &:hover {
+        opacity: 0.7;
+      }
     }
+    div#timeContainer {
+      float: right;
+      right: 0;
+      font-size: 48px;
+      margin-top: 8px;
+      margin-right: 12px;
+      text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+      span#time-sec {
+        filter: brightness(70%);
+        font-family: "Consolas";
+        font-size: 24px;
+      }
+    }
+    .hide {
+      display: none !important;
+    }
+  }
 }

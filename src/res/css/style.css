@@ -29,8 +29,8 @@ body div#root {
   height: 100vh;
   width: 100vw;
   background-color: rgba(75, 75, 75, 0.25);
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(14px);
+          backdrop-filter: blur(14px);
 }
 body div#root a[href] {
   color: #fff;
@@ -93,6 +93,7 @@ body div#root div#cornerButtonContainer {
   height: 36px;
   position: absolute;
   overflow: hidden;
+  transition: 0.6s;
 }
 body div#root div#cornerButtonContainer.bottomCorner {
   bottom: 0;
@@ -217,9 +218,13 @@ body div#root div#settingsPanelContainer {
   height: 100vh;
   width: 36vw;
   overflow: hidden;
-  display: none;
   position: absolute;
+  transition: 0.5s ease-in-out;
+  transform: translateX(-100vw);
   background-color: transparent !important;
+}
+body div#root div#settingsPanelContainer.panShow {
+  transform: translateX(0);
 }
 body div#root div#settingsPanelContainer div#settingsPanel {
   margin: 0;
@@ -232,8 +237,6 @@ body div#root div#settingsPanelContainer div#settingsPanel {
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
   background-color: rgba(255, 255, 255, 0.1) !important;
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
 }
 body div#root a#imgCreator {
   position: absolute;
@@ -252,9 +255,10 @@ body div#root div#timeContainer {
   font-size: 48px;
   margin-top: 8px;
   margin-right: 12px;
-  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
 body div#root div#timeContainer span#time-sec {
+  filter: brightness(70%);
   font-family: "Consolas";
   font-size: 24px;
 }

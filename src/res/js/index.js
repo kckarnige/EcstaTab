@@ -21,7 +21,7 @@ if (UNSPLASH_API_KEY) {
       document.getElementById("imgCreator").innerText = ("Image by " + fetched.user.name);
       document.getElementById("imgCreator").setAttribute("href", fetched.links.html);
     }
-    
+
     console.log("Using fetched image");
     console.log("Image URL: " + fetched.urls.small);
     //Turn image background into Base64 data URI
@@ -32,13 +32,12 @@ if (UNSPLASH_API_KEY) {
         reader.onloadend = () => resolve(reader.result)
         reader.onerror = reject
         reader.readAsDataURL(blob)
-        
+
       })
-      .then(dataUrl => {
-        console.log("Image Data: " + dataUrl);
-        localStorage.setItem("fetchedBgImg", dataUrl + "");
-      }))
-      
+        .then(dataUrl => {
+          localStorage.setItem("fetchedBgImg", dataUrl + "");
+        }))
+
     //Everything else
     console.log(getLastFetch);
     console.log(getLastFetchDate);
@@ -127,10 +126,16 @@ if (document.getElementsByClassName("reload")[0]) {
 
 //Settings Panel
 document.getElementsByClassName("setOpen")[0].addEventListener("click", () => {
-  document.getElementById("settingsPanelContainer").style.display = "block"
-  document.getElementsByClassName("options")[0].style.display = "none";
+  if (!document.getElementById("settingsPanelContainer").classList.contains("panShow")) {
+    document.getElementById("settingsPanelContainer").classList.add("panShow");
+    document.getElementsByClassName("options")[0].style = "pointer-events: none; filter: blur(5px);";
+    document.getElementsByClassName("bottomCorner")[0].style = "pointer-events: none; filter: blur(5px);";
+  }
 })
 document.getElementsByClassName("setClose")[0].addEventListener("click", () => {
-  document.getElementById("settingsPanelContainer").style.display = "none"
-  document.getElementsByClassName("options")[0].style.display = "block";
+  if (document.getElementById("settingsPanelContainer").classList.contains("panShow")) {
+    document.getElementById("settingsPanelContainer").classList.remove("panShow");
+    document.getElementsByClassName("options")[0].style = "pointer-events: auto;";
+    document.getElementsByClassName("bottomCorner")[0].style = "pointer-events: auto;";
+  }
 })
