@@ -13,19 +13,19 @@ if (UNSPLASH_API_KEY) {
 
   //Background Fetch Code
   function set(fetched) {
-    localStorage.setItem("fetchedBgImgURL", fetched.urls.small + "");
+    localStorage.setItem("fetchedBgImgURL", fetched.urls.regular + "");
     localStorage.setItem("unsplashApiCreditName", fetched.user.name + "");
     localStorage.setItem("unsplashApiCreditLink", fetched.links.html + "");
-    document.getElementById("background").style.backgroundImage = `url(${fetched.urls.small})`;
+    document.getElementById("background").style.backgroundImage = `url(${fetched.urls.regular})`;
     if (document.getElementById("imgCreator")) {
       document.getElementById("imgCreator").innerText = ("Image by " + fetched.user.name);
       document.getElementById("imgCreator").setAttribute("href", fetched.links.html);
     }
 
     console.log("Using fetched image");
-    console.log("Image URL: " + fetched.urls.small);
+    console.log("Image URL: " + fetched.urls.regular);
     //Turn image background into Base64 data URI
-    fetch(fetched.urls.small)
+    fetch(fetched.urls.regular)
       .then(response => response.blob())
       .then(blob => new Promise((resolve, reject) => {
         const reader = new FileReader()
