@@ -75,23 +75,25 @@ if (UNSPLASH_API_KEY) {
 
   //Background Refresh
   if (getLastFetch && getLastFetchDate) {
-    if ((getLastFetch > Date.now() / 60000 - 3) || (getLastFetchDate != currentDate) || (localStorage.getItem("fetchedBgImg") == undefined)) {
-      window.onload = () => {
-        document.getElementById("background").style.backgroundImage = `url(${localStorage.getItem("fetchedBgImg")})`;
-        if (document.getElementById("imgCreator")) {
-          document.getElementById("imgCreator").innerText = ("Image by " + localStorage.getItem("unsplashApiCreditName"));
-          document.getElementById("imgCreator").setAttribute("href", localStorage.getItem("unsplashApiCreditLink"));
-        }
-        console.log(
-          `Hasn't been 3 minutes (Has only been ${(Date.now() / 60000 - getLastFetch).toFixed(1)}), nor has a full day passed (failsafe solution)`
-        );
-        console.log("Using stored image");
-        console.log(localStorage.getItem("lastFetch"));
-        console.log(localStorage.getItem("lastFetchDate"));
-        console.log("Image URL: " + localStorage.getItem("fetchedBgImgURL"));
-      };
-    } else {
+    if (localStorage.getItem("fetchedBgImg") == undefined) {
       getAndSet();
+    }
+    else if (3 <= (Date.now() / 60000 - getLastFetch).toFixed(0)) {
+      getAndSet();
+    }
+    else {
+      document.getElementById("background").style.backgroundImage = `url(${localStorage.getItem("fetchedBgImg")})`;
+      if (document.getElementById("imgCreator")) {
+        document.getElementById("imgCreator").innerText = ("Image by " + localStorage.getItem("unsplashApiCreditName"));
+        document.getElementById("imgCreator").setAttribute("href", localStorage.getItem("unsplashApiCreditLink"));
+      }
+      console.log(
+        `Hasn't been 3 minutes (Has only been ${(Date.now() / 60000 - getLastFetch).toFixed(0)})`
+      );
+      console.log("Using stored image");
+      console.log(localStorage.getItem("lastFetch"));
+      console.log(localStorage.getItem("lastFetchDate"));
+      console.log("Image URL: " + localStorage.getItem("fetchedBgImgURL"));
     }
   } else {
     getAndSet();
