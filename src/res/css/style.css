@@ -180,7 +180,7 @@ body div#root div#cornerButtonContainer a#cornerButton.ko-fi {
   color: #fff;
 }
 body div#root div#cornerButtonContainer a#cornerButton.ko-fi:hover {
-  color: #ff5e5b;
+  color: #ffdd00;
 }
 body div#root div#cornerButtonContainer a#cornerButton.reload {
   content: url("../space.svg");
