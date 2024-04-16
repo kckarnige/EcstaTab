@@ -6,7 +6,9 @@
 </p>
 <h1></h1>
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/kckarnige)
+<a href="https://www.buymeacoffee.com/kckarnige">
+  <img width="222" alt="bmc-button" src="https://github.com/kckarnige/kckarnige/assets/32397453/8da1edcc-2c3b-4628-8d82-4b53025a16ee">
+</a>
 
 ### What is this?
 A very simple new tab page extension meant to stay out of your way while still being a pleasant distraction for those who need something to look at while they think.
