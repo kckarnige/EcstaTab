@@ -3,3 +3,5 @@
 *.zip
 src/manifest.json
 .vscode/
+dist
+temp
