@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 html {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -7,7 +8,7 @@ body {
   font-size: 16px;
   margin: 0;
   color: #fff;
-  font-family: "Poppins";
+  font-family: "Onest";
   background-color: rgb(0, 0, 0);
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -23,8 +24,7 @@ body div#background {
   background-repeat: no-repeat;
 }
 body div#root {
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
   margin: 0;
   height: 100vh;
   width: 100vw;
@@ -44,7 +44,7 @@ body div#root input {
   font-size: 14px;
   width: 344px;
   text-align: center;
-  font-family: "Consolas";
+  font-family: "JetBrains Mono";
   display: inline-block;
   color: white;
   background-color: rgb(44, 44, 44);
@@ -58,7 +58,7 @@ body div#root button {
   font-size: 20px;
   width: 160px;
   text-align: center;
-  font-family: "Consolas";
+  font-family: "JetBrains Mono";
   display: inline-block;
   color: white;
   background-color: rgb(44, 44, 44);
@@ -105,11 +105,7 @@ body div#root div#cornerButtonContainer a#cornerButton {
   opacity: 0.3;
   transition: 0.4s;
   cursor: pointer;
-}
-body div#root div#cornerButtonContainer a#cornerButton.settings {
   content: url("../space.svg");
-  -webkit-mask-image: url("../gear.svg");
-          mask-image: url("../gear.svg");
   -webkit-mask-size: 100%;
           mask-size: 100%;
   -webkit-mask-position: center center;
@@ -117,98 +113,35 @@ body div#root div#cornerButtonContainer a#cornerButton.settings {
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   background-repeat: no-repeat;
-  background-color: currentColor;
   color: #fff;
-}
-body div#root div#cornerButtonContainer a#cornerButton.config {
-  content: url("../space.svg");
-  -webkit-mask-image: url("../config.svg");
-          mask-image: url("../config.svg");
-  -webkit-mask-size: 100%;
-          mask-size: 100%;
-  -webkit-mask-position: center center;
-          mask-position: center center;
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  background-repeat: no-repeat;
-  background-color: currentColor;
-  color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.45);
 }
 body div#root div#cornerButtonContainer a#cornerButton.home {
   position: absolute;
   right: 0;
   float: right;
-  content: url("../space.svg");
-  -webkit-mask-image: url("../home.svg");
-          mask-image: url("../home.svg");
-  -webkit-mask-size: 100%;
-          mask-size: 100%;
-  -webkit-mask-position: center center;
-          mask-position: center center;
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  background-repeat: no-repeat;
-  background-color: currentColor;
-  color: #fff;
+  content: url("../home.svg");
+}
+body div#root div#cornerButtonContainer a#cornerButton.settings {
+  content: url("../gear.svg");
+}
+body div#root div#cornerButtonContainer a#cornerButton.config {
+  content: url("../config.svg");
 }
 body div#root div#cornerButtonContainer a#cornerButton.gh {
-  content: url("../space.svg");
-  -webkit-mask-image: url("../github.svg");
-          mask-image: url("../github.svg");
-  -webkit-mask-size: 100%;
-          mask-size: 100%;
-  -webkit-mask-position: center center;
-          mask-position: center center;
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  background-repeat: no-repeat;
-  background-color: currentColor;
-  color: #fff;
+  content: url("../github.svg");
 }
 body div#root div#cornerButtonContainer a#cornerButton.ko-fi {
-  content: url("../space.svg");
-  -webkit-mask-image: url("../kofi.svg");
-          mask-image: url("../kofi.svg");
-  -webkit-mask-size: 100%;
-          mask-size: 100%;
-  -webkit-mask-position: center center;
-          mask-position: center center;
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  background-repeat: no-repeat;
-  background-color: currentColor;
-  color: #fff;
+  content: url("../kofi.svg");
 }
-body div#root div#cornerButtonContainer a#cornerButton.ko-fi:hover {
-  color: #ffdd00;
+body div#root div#cornerButtonContainer a#cornerButton.bmc {
+  content: url("../bmc.svg");
 }
 body div#root div#cornerButtonContainer a#cornerButton.reload {
-  content: url("../space.svg");
-  -webkit-mask-image: url("../reload.svg");
-          mask-image: url("../reload.svg");
-  -webkit-mask-size: 100%;
-          mask-size: 100%;
-  -webkit-mask-position: center center;
-          mask-position: center center;
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  background-repeat: no-repeat;
-  background-color: currentColor;
-  color: #fff;
+  content: url("../reload.svg");
 }
 body div#root div#cornerButtonContainer a#cornerButton.key {
-  content: url("../space.svg");
-  -webkit-mask-image: url("../key.svg");
-          mask-image: url("../key.svg");
-  -webkit-mask-size: 100%;
-          mask-size: 100%;
-  -webkit-mask-position: center center;
-          mask-position: center center;
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  background-repeat: no-repeat;
-  background-color: currentColor;
-  color: #fff;
+  content: url("../key.svg");
 }
 body div#root div#cornerButtonContainer a#cornerButton:hover {
   transition: 0.2s;
@@ -216,26 +149,26 @@ body div#root div#cornerButtonContainer a#cornerButton:hover {
 }
 body div#root div#settingsPanelContainer {
   height: 100vh;
-  width: 36vw;
+  width: 60vw;
   overflow: hidden;
   position: absolute;
-  transition: 0.8s ease-in-out;
-  transform: translateX(-100vw);
+  transition: 0.4s ease-in-out;
+  float: right;
+  left: 0;
+  transform: translate(50%, 100vh);
   background-color: transparent !important;
 }
 body div#root div#settingsPanelContainer.panShow {
-  transform: translateX(0);
+  transform: translate(50%, 30vh);
 }
 body div#root div#settingsPanelContainer div#settingsPanel {
   margin: 0;
   border: none;
-  left: 0;
-  float: left;
-  height: 100vh;
+  height: 80vh;
   width: 36vw;
   position: absolute;
   border-top-right-radius: 16px;
-  border-bottom-right-radius: 16px;
+  border-top-left-radius: 16px;
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 body div#root a#imgCreator {
@@ -255,11 +188,11 @@ body div#root div#timeContainer {
   font-size: 48px;
   margin-top: 8px;
   margin-right: 12px;
-  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.45);
 }
 body div#root div#timeContainer span#time-sec {
   opacity: 0.75;
-  font-family: "Consolas";
+  font-family: "JetBrains Mono";
   font-size: 24px;
 }
 body div#root .hide {

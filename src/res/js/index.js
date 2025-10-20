@@ -127,17 +127,16 @@ if (document.getElementsByClassName("reload")[0]) {
 }
 
 //Settings Panel
-document.getElementsByClassName("setOpen")[0].addEventListener("click", () => {
-  if (!document.getElementById("settingsPanelContainer").classList.contains("panShow")) {
+document.getElementsByClassName("settings")[0].addEventListener("click", () => {
+  if (document.getElementsByClassName("settings")[0].classList.contains("setOpen")) {
     document.getElementById("settingsPanelContainer").classList.add("panShow");
-    document.getElementsByClassName("options")[0].style = "pointer-events: none; filter: blur(5px);";
-    document.getElementsByClassName("bottomCorner")[0].style = "pointer-events: none; filter: blur(5px);";
-  }
-})
-document.getElementsByClassName("setClose")[0].addEventListener("click", () => {
-  if (document.getElementById("settingsPanelContainer").classList.contains("panShow")) {
+    document.getElementsByClassName("setOpen")[0].classList.add("setClose");
+    document.getElementsByClassName("setOpen")[0].classList.remove("setOpen");
+    console.log("Click!")
+  } else if (document.getElementsByClassName("settings")[0].classList.contains("setClose")) {
     document.getElementById("settingsPanelContainer").classList.remove("panShow");
-    document.getElementsByClassName("options")[0].style = "pointer-events: auto;";
-    document.getElementsByClassName("bottomCorner")[0].style = "pointer-events: auto;";
+    document.getElementsByClassName("setClose")[0].classList.add("setOpen");
+    document.getElementsByClassName("setClose")[0].classList.remove("setClose");
+    console.log("Clank!")
   }
 })
