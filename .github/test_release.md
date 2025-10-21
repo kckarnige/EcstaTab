@@ -8,30 +8,27 @@
 <details>
   <summary>Firefox</summary>
 
-  1. Copy the `manifest.xpi.json` file to the `src` directory
+  1. Extract the contents of the zip file into it's own folder
 
-  2. Rename it to `manifest.json`
   <details>
-  <summary>3. Open your extension settings and click on the gear icon</summary>
+  <summary>2. Open your extension settings and click on the gear icon</summary>
   
   ![help1](./help1.png)
   </details>
 
-  4. Click "Debug Add-ons"
+  3. Click "Debug Add-ons"
 
-  5. Click "Load temporary Add-on..." and find the `src` directory
+  4. Click "Load temporary Add-on..." and find the `src` directory
 </details>
 
 <details>
   <summary>Chromium</summary>
 
-  1. Copy the `manifest.crx.json` file to the `src` directory
-
-  2. Rename it to `manifest.json`
+  1. Extract the contents of the zip file into it's own folder
   
-  3. Open your extension settings
+  2. Open your extension settings
 
-  4. Toggle developer mode *(Usually located on the same page)*
+  3. Toggle developer mode *(Usually located on the same page)*
 
-  5. Click "Load unpacked" and find the `src` directory
+  4. Click "Load unpacked" and find the `src` directory
 </details>
